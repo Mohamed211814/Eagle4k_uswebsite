@@ -5,42 +5,40 @@ import { MessageCircle, Send } from 'lucide-react';
 
 export const WhatsAppButton: React.FC = () => {
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-      {/* Telegram Floating Button */}
-      <a
-        href="https://t.me/contactece"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative flex items-center gap-2 p-3.5 rounded-full bg-sky-500 hover:bg-sky-400 text-slate-950 shadow-2xl shadow-sky-500/40 hover:scale-110 transition-all duration-300 border border-sky-300/40 cursor-pointer"
-        aria-label="Contact Telegram @contactece"
-      >
-        <Send className="w-5 h-5 fill-slate-950 -translate-x-0.5" />
-        <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 whitespace-nowrap text-xs font-black tracking-wide pr-1">
-          Telegram @contactece
-        </span>
-        {/* Tooltip Badge on hover */}
-        <span className="absolute right-full mr-3 hidden md:group-hover:flex items-center px-3 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-bold border border-sky-500/40 shadow-xl whitespace-nowrap">
-          Contact on Telegram (@contactece)
-        </span>
-      </a>
+    <div className="fixed bottom-6 right-6 z-50 flex flex-row items-center gap-3">
+      {/* Telegram Circular Icon Button */}
+      <div className="relative group">
+        <a
+          href="https://t.me/contactece"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 rounded-full bg-sky-500 hover:bg-sky-400 text-slate-950 flex items-center justify-center shadow-xl shadow-sky-500/30 hover:scale-110 transition-all duration-200 border border-sky-300/30 cursor-pointer"
+          aria-label="Telegram"
+        >
+          <Send className="w-5 h-5 fill-slate-950 -translate-x-0.5" />
+        </a>
+        {/* Tooltip on Hover */}
+        <div className="absolute bottom-full mb-2.5 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none px-2.5 py-1 rounded-lg bg-slate-900 text-white text-xs font-bold border border-sky-500/40 shadow-xl whitespace-nowrap">
+          Telegram
+        </div>
+      </div>
 
-      {/* WhatsApp Floating Button */}
-      <a
-        href="https://wa.me/0779395271"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative flex items-center gap-2 p-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-2xl shadow-emerald-500/40 hover:scale-110 transition-all duration-300 border border-emerald-300/40 cursor-pointer"
-        aria-label="Contact WhatsApp 0779395271"
-      >
-        <MessageCircle className="w-6 h-6 fill-slate-950" />
-        <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 whitespace-nowrap text-xs font-black tracking-wide pr-1">
-          WhatsApp 0779395271
-        </span>
-        {/* Tooltip Badge on hover */}
-        <span className="absolute right-full mr-3 hidden md:group-hover:flex items-center px-3 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-bold border border-emerald-500/40 shadow-xl whitespace-nowrap">
-          WhatsApp Support (0779395271)
-        </span>
-      </a>
+      {/* WhatsApp Circular Icon Button */}
+      <div className="relative group">
+        <a
+          href="https://wa.me/0779395271"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 flex items-center justify-center shadow-xl shadow-emerald-500/30 hover:scale-110 transition-all duration-200 border border-emerald-300/30 cursor-pointer"
+          aria-label="WhatsApp"
+        >
+          <MessageCircle className="w-6 h-6 fill-slate-950" />
+        </a>
+        {/* Tooltip on Hover */}
+        <div className="absolute bottom-full mb-2.5 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none px-2.5 py-1 rounded-lg bg-slate-900 text-white text-xs font-bold border border-emerald-500/40 shadow-xl whitespace-nowrap">
+          WhatsApp
+        </div>
+      </div>
     </div>
   );
 };
