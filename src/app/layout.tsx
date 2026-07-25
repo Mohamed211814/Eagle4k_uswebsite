@@ -33,8 +33,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${outfit.variable} dark scroll-smooth h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="bg-[#07090e] text-slate-100 min-h-full flex flex-col font-sans selection:bg-amber-500 selection:text-slate-950">
+      <body
+        className="bg-[#07090e] text-slate-100 min-h-full flex flex-col font-sans selection:bg-amber-500 selection:text-slate-950"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>
