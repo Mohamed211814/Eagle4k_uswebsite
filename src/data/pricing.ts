@@ -11,6 +11,19 @@ export interface PricingPlan {
   ctaText: string;
 }
 
+export interface ResellerPlan {
+  id: string;
+  name: string;
+  credits: number;
+  yearsEquivalent: string;
+  price: string;
+  perCreditPrice: string;
+  discountBadge?: string;
+  popular?: boolean;
+  features: string[];
+  ctaText: string;
+}
+
 export const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'trial-24h',
@@ -87,6 +100,49 @@ export const PRICING_PLANS: PricingPlan[] = [
       '24/7 VIP Dedicated Support',
     ],
     ctaText: 'Claim 12 Months + 2 Connections',
+  },
+];
+
+export const RESELLER_PLANS: ResellerPlan[] = [
+  {
+    id: 'reseller-240',
+    name: 'Starter Reseller Panel',
+    credits: 240,
+    yearsEquivalent: '240 Credits = 10 Years IPTV',
+    price: '$299.99',
+    perCreditPrice: '$1.25 / Credit ($30 / Year Line)',
+    discountBadge: '10 YEARS CREDIT PACK',
+    features: [
+      '240 Credits Total (240 Months / 10 Years Total)',
+      'Official Xtream Codes / Xtream UI Dashboard Access',
+      'Create, Extend & Manage IPTV Lines & Free Trials',
+      'Sub-Reseller Account Creation Enabled',
+      'Credits Never Expire (Lifetime Balance)',
+      'Automated REST API & WHMCS Billing Integration',
+      '24/7 Priority Reseller Live Support',
+    ],
+    ctaText: 'Get 240 Credits Panel ($299.99)',
+  },
+  {
+    id: 'reseller-480',
+    name: 'Pro Reseller Panel (Mega Pack)',
+    credits: 480,
+    yearsEquivalent: '480 Credits = 20 Years IPTV',
+    price: '$479.99',
+    perCreditPrice: '$0.99 / Credit ($23.99 / Year Line) - CHEAPER RATE!',
+    discountBadge: 'SAVE 60% - BEST BULK VALUE',
+    popular: true,
+    features: [
+      '480 Credits Total (480 Months / 20 Years Total)',
+      'Cheaper Rate per Credit ($0.99 vs $1.25)',
+      'Official Xtream Codes / Xtream UI Dashboard Access',
+      'Create, Extend & Manage IPTV Lines & Free Trials',
+      'Sub-Reseller Creation & Management Rights',
+      'Custom DNS & Multi-Domain Branding Enabled',
+      'Credits Never Expire (Lifetime Balance)',
+      '24/7 VIP Dedicated Reseller Support Manager',
+    ],
+    ctaText: 'Get 480 Credits Panel ($479.99)',
   },
 ];
 

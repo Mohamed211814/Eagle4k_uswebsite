@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { X, CheckCircle2, ShieldCheck, Zap, Lock, Tv, Sparkles, CreditCard, Copy, Check } from 'lucide-react';
+import { X, CheckCircle2, ShieldCheck, Zap, Lock, Tv, Sparkles, CreditCard, Copy, Check, Cpu } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { PRICING_PLANS } from '@/data/pricing';
+import { PRICING_PLANS, RESELLER_PLANS } from '@/data/pricing';
 
 interface CheckoutModalProps {
   isOpen: boolean;
@@ -34,7 +34,19 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
   if (!isOpen) return null;
 
-  const currentPlan = PRICING_PLANS.find((p) => p.id === selectedPlanId) || PRICING_PLANS[3];
+  const allPlans = [...PRICING_PLANS, ...RESELLER_PLANS.map(r => ({
+    id: r.id,
+    name: r.name,
+    duration: `${r.credits} Credits (${r.yearsEquivalent})`,
+    price: r.price,
+    monthlyEquivalent: r.perCreditPrice,
+    connections: 1,
+    features: r.features,
+    ctaText: r.ctaText,
+  }))];
+
+  const currentPlan = allPlans.find((p) => p.id === selectedPlanId) || allPlans[3];
+  const isResellerPack = selectedPlanId.startsWith('reseller-');
 
   const handleSubmitOrder = (e: React.FormEvent) => {
     e.preventDefault();
@@ -68,7 +80,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-xl bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+          className="absolute top-5 right-5 p-2 rounded-xl bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
           aria-label="Close"
         >
           <X className="w-5 h-5" />
@@ -81,98 +93,82 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-amber-500/20 text-amber-400 border border-amber-500/40 uppercase">
-                  INSTANT AUTO-ACTIVATION
+                  {isResellerPack ? 'RESELLER PANEL ACTIVATION' : 'INSTANT AUTO-ACTIVATION'}
                 </span>
               </div>
               <h2 className="text-2xl font-black text-white mt-1">
-                Complete Your <span className="text-gradient-gold">Eagle4k Order</span>
+                {isResellerPack ? 'Eagle4k Reseller Panel Checkout' : 'Complete Your Eagle4k Order'}
               </h2>
               <p className="text-xs text-slate-300 mt-1">
-                Credentials & setup instructions will be sent instantly to your email address.
+                {isResellerPack
+                  ? 'Your Xtream UI Dashboard access & credit balance will be delivered to your email address.'
+                  : 'Credentials & setup instructions will be sent instantly to your email address.'}
               </p>
             </div>
 
-            {/* Selected Plan Selector Bar */}
-            <div className="p-4 rounded-2xl bg-slate-950/90 border border-slate-800 space-y-3">
-              <label className="text-xs font-bold text-slate-300">Select Subscription Plan:</label>
-              <div className="grid grid-cols-2 gap-2">
-                {PRICING_PLANS.map((plan) => (
+            {/* Selected Plan Summary Box */}
+            <div className="p-4 rounded-2xl bg-slate-950/90 border border-slate-800 space-y-2">
+              <div className="text-xs font-bold text-slate-400">Selected Package:</div>
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-base font-black text-white flex items-center gap-2">
+                    {isResellerPack && <Cpu className="w-4 h-4 text-amber-400" />}
+                    {currentPlan.name}
+                  </div>
+                  <div className="text-xs text-amber-400 font-semibold">{currentPlan.duration}</div>
+                </div>
+                <div className="text-2xl font-black text-amber-400">{currentPlan.price}</div>
+              </div>
+            </div>
+
+            {!isResellerPack && (
+              /* Playlist Format Selection (for standard subscriptions) */
+              <div className="space-y-2">
+                <label className="text-xs font-bold text-slate-300">Select IPTV Playlist Format:</label>
+                <div className="grid grid-cols-3 gap-2">
                   <button
-                    key={plan.id}
                     type="button"
-                    onClick={() => setSelectedPlanId(plan.id)}
-                    className={`p-3 rounded-xl text-left border transition-all text-xs cursor-pointer ${
-                      selectedPlanId === plan.id
-                        ? 'bg-amber-500/20 border-amber-500 text-amber-400 font-bold'
-                        : 'bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-700'
+                    onClick={() => setFormat('xtream')}
+                    className={`p-2.5 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
+                      format === 'xtream'
+                        ? 'bg-amber-500 text-slate-950 border-amber-500'
+                        : 'bg-slate-900 text-slate-400 border-slate-800'
                     }`}
                   >
-                    <div className="font-bold">{plan.name}</div>
-                    <div className="text-sm font-black text-white">{plan.price}</div>
+                    Xtream API ⭐
                   </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Playlist Format Selection */}
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-300">Select IPTV Playlist Format:</label>
-              <div className="grid grid-cols-3 gap-2">
-                <button
-                  type="button"
-                  onClick={() => setFormat('xtream')}
-                  className={`p-2.5 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
-                    format === 'xtream'
-                      ? 'bg-amber-500 text-slate-950 border-amber-500'
-                      : 'bg-slate-900 text-slate-400 border-slate-800'
-                  }`}
-                >
-                  Xtream API ⭐
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setFormat('m3u')}
-                  className={`p-2.5 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
-                    format === 'm3u'
-                      ? 'bg-amber-500 text-slate-950 border-amber-500'
-                      : 'bg-slate-900 text-slate-400 border-slate-800'
-                  }`}
-                >
-                  M3U Playlist
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setFormat('mag')}
-                  className={`p-2.5 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
-                    format === 'mag'
-                      ? 'bg-amber-500 text-slate-950 border-amber-500'
-                      : 'bg-slate-900 text-slate-400 border-slate-800'
-                  }`}
-                >
-                  MAG MAC Portal
-                </button>
-              </div>
-            </div>
-
-            {/* If MAG selected, prompt for MAC address */}
-            {format === 'mag' && (
-              <div className="space-y-1">
-                <label className="text-xs font-bold text-amber-400">MAG MAC Address (00:1A:79:...):</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="00:1A:79:XX:XX:XX"
-                  value={macAddress}
-                  onChange={(e) => setMacAddress(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-amber-500/50 text-white text-xs outline-none focus:ring-2 focus:ring-amber-500"
-                />
+                  <button
+                    type="button"
+                    onClick={() => setFormat('m3u')}
+                    className={`p-2.5 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
+                      format === 'm3u'
+                        ? 'bg-amber-500 text-slate-950 border-amber-500'
+                        : 'bg-slate-900 text-slate-400 border-slate-800'
+                    }`}
+                  >
+                    M3U Playlist
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setFormat('mag')}
+                    className={`p-2.5 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
+                      format === 'mag'
+                        ? 'bg-amber-500 text-slate-950 border-amber-500'
+                        : 'bg-slate-900 text-slate-400 border-slate-800'
+                    }`}
+                  >
+                    MAG MAC Portal
+                  </button>
+                </div>
               </div>
             )}
 
-            {/* Email Address & Device Type */}
+            {/* Email Address & Device Selection */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div className="space-y-1">
-                <label className="text-xs font-bold text-slate-300">Your Delivery Email:</label>
+              <div className="space-y-1 sm:col-span-2">
+                <label className="text-xs font-bold text-slate-300">
+                  {isResellerPack ? 'Reseller Account Email:' : 'Your Delivery Email:'}
+                </label>
                 <input
                   type="email"
                   required
@@ -181,22 +177,6 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                 />
-              </div>
-
-              <div className="space-y-1">
-                <label className="text-xs font-bold text-slate-300">Target Device:</label>
-                <select
-                  value={deviceType}
-                  onChange={(e) => setDeviceType(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs outline-none focus:border-amber-500"
-                >
-                  <option value="Firestick">Amazon Firestick</option>
-                  <option value="Smart TV">Smart TV (Samsung/LG)</option>
-                  <option value="Android TV">Android Box / Google TV</option>
-                  <option value="Apple TV">Apple TV / iPhone</option>
-                  <option value="MAG Box">MAG Box / Formuler</option>
-                  <option value="PC / Mac">Windows PC / Mac</option>
-                </select>
               </div>
             </div>
 
@@ -255,7 +235,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                 className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-sm shadow-xl shadow-amber-500/25 transition-all disabled:opacity-50 cursor-pointer flex items-center gap-2"
               >
                 {isSubmitting ? (
-                  <span>Activating Stream...</span>
+                  <span>{isResellerPack ? 'Creating Panel...' : 'Activating Stream...'}</span>
                 ) : (
                   <>
                     <Zap className="w-4 h-4 fill-slate-950" />
@@ -276,22 +256,26 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             <div>
               <h2 className="text-2xl font-black text-white">Order Confirmed! 🎉</h2>
               <p className="text-xs text-slate-300 mt-1">
-                Your Eagle4k subscription has been activated for <strong className="text-amber-400">{email}</strong>.
+                {isResellerPack ? (
+                  <>Your Eagle4k Reseller Dashboard access has been generated for <strong className="text-amber-400">{email}</strong>.</>
+                ) : (
+                  <>Your Eagle4k subscription has been activated for <strong className="text-amber-400">{email}</strong>.</>
+                )}
               </p>
             </div>
 
-            {/* Generated Xtream API Credentials Box */}
+            {/* Generated Credentials Box */}
             <div className="p-4 rounded-2xl bg-slate-950/90 border border-amber-500/40 text-left space-y-3 font-mono text-xs">
               <div className="text-[10px] text-amber-400 font-sans font-bold uppercase tracking-wider">
-                YOUR INSTANT XTREAM CODES API ACCESS:
+                {isResellerPack ? 'YOUR RESELLER DASHBOARD LOGIN:' : 'YOUR INSTANT XTREAM CODES API ACCESS:'}
               </div>
 
               <div className="flex items-center justify-between p-2 rounded bg-slate-900 border border-slate-800">
-                <span className="text-slate-400">Server URL:</span>
+                <span className="text-slate-400">{isResellerPack ? 'Panel Portal URL:' : 'Server URL:'}</span>
                 <div className="flex items-center gap-2">
-                  <span className="text-emerald-400 font-bold">http://eagle4k-cdn.vip:8080</span>
+                  <span className="text-emerald-400 font-bold">http://reseller.eagle4k-cdn.vip</span>
                   <button
-                    onClick={() => handleCopyText('http://eagle4k-cdn.vip:8080', 'url')}
+                    onClick={() => handleCopyText('http://reseller.eagle4k-cdn.vip', 'url')}
                     className="p-1 text-slate-400 hover:text-white"
                   >
                     {copiedField === 'url' ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
@@ -302,9 +286,9 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               <div className="flex items-center justify-between p-2 rounded bg-slate-900 border border-slate-800">
                 <span className="text-slate-400">Username:</span>
                 <div className="flex items-center gap-2">
-                  <span className="text-white font-bold">eg4k_{Math.floor(100000 + Math.random() * 900000)}</span>
+                  <span className="text-white font-bold">reseller_{Math.floor(100000 + Math.random() * 900000)}</span>
                   <button
-                    onClick={() => handleCopyText('eg4k_user_active', 'user')}
+                    onClick={() => handleCopyText('reseller_active', 'user')}
                     className="p-1 text-slate-400 hover:text-white"
                   >
                     {copiedField === 'user' ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
@@ -315,9 +299,9 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               <div className="flex items-center justify-between p-2 rounded bg-slate-900 border border-slate-800">
                 <span className="text-slate-400">Password:</span>
                 <div className="flex items-center gap-2">
-                  <span className="text-amber-400 font-bold">4Kpass_{Math.floor(1000 + Math.random() * 9000)}</span>
+                  <span className="text-amber-400 font-bold">PanelPass_{Math.floor(1000 + Math.random() * 9000)}</span>
                   <button
-                    onClick={() => handleCopyText('4Kpass_7890', 'pass')}
+                    onClick={() => handleCopyText('PanelPass_9988', 'pass')}
                     className="p-1 text-slate-400 hover:text-white"
                   >
                     {copiedField === 'pass' ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
@@ -326,10 +310,6 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               </div>
             </div>
 
-            <p className="text-[11px] text-slate-400">
-              A copy of these credentials & setup guide links have also been sent to your email!
-            </p>
-
             <button
               onClick={() => {
                 setStep('details');
@@ -337,7 +317,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               }}
               className="w-full py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs shadow-lg shadow-amber-500/20 cursor-pointer"
             >
-              Done & Start Streaming
+              Done & Access Panel
             </button>
           </div>
         )}

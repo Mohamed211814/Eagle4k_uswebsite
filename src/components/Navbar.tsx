@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Tv, ShieldCheck, Zap, Menu, X, Sparkles } from 'lucide-react';
+import { Tv, Menu, X, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
 interface NavbarProps {
   onOpenCheckout: (planId?: string) => void;
@@ -20,12 +21,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
   }, []);
 
   const navLinks = [
-    { name: 'Channels & VOD', href: '#channels' },
-    { name: 'Pricing Plans', href: '#pricing' },
-    { name: 'Why Eagle4k', href: '#features' },
-    { name: 'Setup Guide', href: '#setup' },
-    { name: 'Server Status', href: '#status' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'Pricing Plans', href: '/#pricing' },
+    { name: 'Why Eagle4k', href: '/#features' },
+    { name: 'Setup Guide', href: '/#setup' },
+    { name: 'FAQ', href: '/#faq' },
   ];
 
   return (
@@ -39,7 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-cyan-400 p-0.5 shadow-lg shadow-amber-500/25 group-hover:scale-105 transition-transform duration-300">
               <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
                 <Tv className="w-5 h-5 text-amber-400 group-hover:text-cyan-400 transition-colors" />
@@ -56,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
               </div>
               <span className="text-[10px] text-slate-400 tracking-wider font-medium">PREMIUM IPTV STREAMING</span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-1 lg:gap-2 glass-panel px-4 py-1.5 rounded-full border border-slate-800/60">
@@ -75,20 +74,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
           <div className="hidden lg:flex items-center gap-3">
             <button
               onClick={() => onOpenCheckout('trial-24h')}
-              className="px-4 py-2 text-xs font-bold text-amber-400 bg-amber-500/10 border border-amber-500/40 hover:bg-amber-500/20 rounded-xl transition-all flex items-center gap-1.5 shadow-sm"
+              className="px-5 py-2 text-xs font-bold text-amber-400 bg-amber-500/10 border border-amber-500/40 hover:bg-amber-500/20 rounded-xl transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5" />
               24H Free Trial
-            </button>
-            <button
-              onClick={() => onOpenCheckout()}
-              className="relative group overflow-hidden rounded-xl p-px font-semibold text-xs transition-all duration-300 active:scale-95 shadow-lg shadow-amber-500/20"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-amber-500 via-amber-400 to-cyan-500 group-hover:opacity-90 transition-opacity"></span>
-              <span className="relative block px-4 py-2 rounded-[11px] bg-slate-950 text-white font-bold group-hover:bg-opacity-80 transition-all flex items-center gap-2">
-                <Zap className="w-4 h-4 text-amber-400 fill-amber-400" />
-                Get Instant Access
-              </span>
             </button>
           </div>
 
@@ -125,20 +114,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
                 setMobileMenuOpen(false);
                 onOpenCheckout('trial-24h');
               }}
-              className="w-full py-3 text-sm font-bold text-amber-400 bg-amber-500/10 border border-amber-500/40 rounded-xl flex items-center justify-center gap-2"
+              className="w-full py-3 text-sm font-bold text-amber-400 bg-amber-500/10 border border-amber-500/40 rounded-xl flex items-center justify-center gap-2 cursor-pointer"
             >
               <Sparkles className="w-4 h-4" />
               Claim 24H Trial Pass ($1.99)
-            </button>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenCheckout();
-              }}
-              className="w-full py-3 text-sm font-bold text-white bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 rounded-xl shadow-lg shadow-amber-500/25 flex items-center justify-center gap-2"
-            >
-              <Zap className="w-4 h-4 fill-white" />
-              Subscribe Now (Instant Delivery)
             </button>
           </div>
         </div>
