@@ -156,7 +156,7 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenCheckout }) => {
                   {isPopular && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 text-xs font-black tracking-wider uppercase shadow-lg shadow-amber-500/30 flex items-center gap-1.5 whitespace-nowrap">
                       <Flame className="w-3.5 h-3.5 fill-slate-950" />
-                      BEST VALUE - CHEAPER BULK RATE
+                      BEST VALUE CHEAPER BULK RATE
                     </div>
                   )}
 

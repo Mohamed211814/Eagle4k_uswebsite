@@ -4,7 +4,7 @@ import { ArrowLeft, ShieldCheck, RefreshCw, CheckCircle2, HelpCircle } from 'luc
 
 export const metadata = {
   title: 'Refund & Guarantee Policy | Eagle4k Ultra HD IPTV',
-  description: 'Learn about Eagle4k 7-day risk-free money-back guarantee, refund conditions, and technical support assistance.',
+  description: 'Learn about Eagle4k 7 day risk free money back guarantee, refund conditions, and technical support assistance.',
 };
 
 export default function RefundPolicyPage() {
@@ -25,7 +25,7 @@ export default function RefundPolicyPage() {
         <div className="space-y-3 border-b border-slate-800 pb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase">
             <ShieldCheck className="w-3.5 h-3.5" />
-            7-DAY MONEY-BACK GUARANTEE
+            7 DAY MONEY BACK GUARANTEE
           </div>
           <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
             Refund <span className="text-gradient-gold">Policy</span>
@@ -40,7 +40,7 @@ export default function RefundPolicyPage() {
           <section className="space-y-2">
             <h2 className="text-lg font-bold text-white flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-emerald-400" />
-              1. 7-Day Risk-Free Guarantee
+              1. 7 Day Risk Free Guarantee
             </h2>
             <p>
               At Eagle4k, we stand behind our streaming infrastructure. If you experience technical issues, buffering problems, or channel line access failures that our support team cannot resolve within your first <strong className="text-white">7 days of purchase</strong>, you are eligible for a 100% full refund.

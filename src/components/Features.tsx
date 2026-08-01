@@ -8,7 +8,7 @@ export const Features: React.FC = () => {
   const featureList = [
     {
       icon: Cpu,
-      title: 'Anti-Freeze Tech 9.0',
+      title: 'Anti Freeze Tech 9.0',
       description: 'Our intelligent load-balancing algorithm automatically reroutes stream bandwidth during peak live sports matches to guarantee zero buffering.',
       color: 'text-amber-400',
     },
@@ -21,13 +21,13 @@ export const Features: React.FC = () => {
     {
       icon: Globe,
       title: 'Global Server Infrastructure',
-      description: 'High-speed dedicated servers in North America, UK, Europe, and Asia delivering under 30ms latency for smooth channel switching.',
+      description: 'High speed dedicated servers in North America, UK, Europe, and Asia delivering under 30ms latency for smooth channel switching.',
       color: 'text-emerald-400',
     },
     {
       icon: RefreshCw,
-      title: 'EPG & 7-Day Catch-Up',
-      description: 'Complete Electronic Program Guide (EPG) TV schedule with 7-day rewind replay for missed live broadcasts.',
+      title: 'EPG & 7 Day Catch Up',
+      description: 'Complete Electronic Program Guide (EPG) TV schedule with 7 day rewind replay for missed live broadcasts.',
       color: 'text-purple-400',
     },
     {
@@ -38,7 +38,7 @@ export const Features: React.FC = () => {
     },
     {
       icon: Layers,
-      title: 'Instant Multi-Format',
+      title: 'Instant Multi Format',
       description: 'Delivered as Xtream Codes API, M3U Playlist link, or MAG MAC portal for 1-click login on any software app.',
       color: 'text-amber-400',
     },
@@ -58,7 +58,7 @@ export const Features: React.FC = () => {
             Why Millions Switch to <span className="text-gradient-gold">Eagle4k</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
-            Built with ultra-low latency infrastructure and automated stream failovers so you never miss a goal or blockbuster.
+            Built with ultra low latency infrastructure and automated stream failovers so you never miss a goal or blockbuster.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export const Features: React.FC = () => {
         <div className="mt-16 glass-panel rounded-3xl p-6 md:p-10 border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-6 space-y-4">
             <span className="px-3 py-1 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/30 text-xs font-bold uppercase">
-              MULTI-DEVICE CROSS PLATFORM
+              MULTI DEVICE CROSS PLATFORM
             </span>
             <h3 className="text-2xl sm:text-3xl font-black text-white">
               Watch Anywhere on Any Screen in 4K

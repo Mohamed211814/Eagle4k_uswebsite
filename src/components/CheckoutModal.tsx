@@ -93,7 +93,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-amber-500/20 text-amber-400 border border-amber-500/40 uppercase">
-                  {isResellerPack ? 'RESELLER PANEL ACTIVATION' : 'INSTANT AUTO-ACTIVATION'}
+                  {isResellerPack ? 'RESELLER PANEL ACTIVATION' : 'INSTANT AUTO ACTIVATION'}
                 </span>
               </div>
               <h2 className="text-2xl font-black text-white mt-1">

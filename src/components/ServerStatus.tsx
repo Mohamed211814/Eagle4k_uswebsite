@@ -25,7 +25,7 @@ export const ServerStatus: React.FC = () => {
       setTestResult({
         speed: Math.floor(Math.random() * 80) + 120, // 120-200 Mbps
         latency: Math.floor(Math.random() * 10) + 12, // 12-22 ms
-        status: 'PASSED - 4K Ultra HD 60FPS Ready (Zero Buffering)',
+        status: 'PASSED 4K Ultra HD 60FPS Ready (Zero Buffering)',
       });
     }, 2500);
   };
@@ -41,7 +41,7 @@ export const ServerStatus: React.FC = () => {
             LIVE INFRASTRUCTURE MONITOR
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            Real-Time <span className="text-gradient-cyan">Server Latency & Speed</span>
+            Real Time <span className="text-gradient-cyan">Server Latency & Speed</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
             Our multi-gigabit redundant CDN ensures 99.99% stream uptime with instant load balancing.
@@ -135,7 +135,7 @@ export const ServerStatus: React.FC = () => {
                 disabled={testing}
                 className="w-full py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-bold text-xs shadow-md transition-all disabled:opacity-50 cursor-pointer"
               >
-                {testing ? 'Testing Bandwidth...' : testResult ? 'Re-Test Connection' : 'Run 4K Speed Test'}
+                {testing ? 'Testing Bandwidth...' : testResult ? 'Re Test Connection' : 'Run 4K Speed Test'}
               </button>
             </div>
           </div>

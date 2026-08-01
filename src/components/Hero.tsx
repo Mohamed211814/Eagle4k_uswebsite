@@ -32,19 +32,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
-              <span className="text-white font-bold">Anti-Freeze v9.0 Activated</span>
+              <span className="text-white font-bold">Anti Freeze v9.0 Activated</span>
               <span className="text-slate-500">|</span>
               <span className="text-amber-400">99.99% Server Uptime</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.1]">
-              Next-Gen <span className="text-gradient-gold">Ultra HD 4K</span> IPTV Subscription
+              Next Gen <span className="text-gradient-gold">Ultra HD 4K</span> IPTV Subscription
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Stream over <strong className="text-white font-semibold">22,000+ Live Premium TV Channels</strong> and <strong className="text-amber-400 font-semibold">80,000+ Movies & Series (VOD)</strong> with buffer-free 60FPS high refresh rates on any device.
+              Stream over <strong className="text-white font-semibold">22,000+ Live Premium TV Channels</strong> and <strong className="text-amber-400 font-semibold">80,000+ Movies & Series (VOD)</strong> with buffer free 60FPS high refresh rates on any device.
             </p>
 
             {/* Feature Highlights Pills */}
@@ -59,7 +59,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>Instant Auto-Delivery</span>
+                <span>Instant Auto Delivery</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 className="w-4 h-4 text-amber-400" />
@@ -82,7 +82,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
                 className="w-full sm:w-auto px-7 py-4 text-base font-bold text-amber-400 bg-slate-900/90 border border-amber-500/40 hover:bg-amber-500/10 hover:border-amber-500 rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
               >
                 <Sparkles className="w-5 h-5" />
-                24-Hour Trial ($1.99)
+                24 Hour Trial ($1.99)
               </button>
             </div>
 
@@ -236,7 +236,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
           </div>
           <div className="text-center p-3 border-r border-slate-800/80 last:border-r-0">
             <div className="text-3xl sm:text-4xl font-black text-emerald-400 font-sans">99.99%</div>
-            <div className="text-xs text-slate-400 font-medium mt-1">Anti-Freeze Uptime SLA</div>
+            <div className="text-xs text-slate-400 font-medium mt-1">Anti Freeze Uptime SLA</div>
           </div>
           <div className="text-center p-3">
             <div className="text-3xl sm:text-4xl font-black text-white font-sans">&lt; 2 Mins</div>

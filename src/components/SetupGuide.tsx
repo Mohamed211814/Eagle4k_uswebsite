@@ -34,10 +34,10 @@ export const SetupGuide: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
             <Download className="w-3.5 h-3.5" />
-            EASY 2-MINUTE SETUP
+            EASY 2 MINUTE SETUP
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            Step-By-Step <span className="text-gradient-gold">Device Setup Guide</span>
+            Step By Step <span className="text-gradient-gold">Device Setup Guide</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
             Select your device below to see detailed instructions on how to install and activate your Eagle4k subscription.

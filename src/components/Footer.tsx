@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
             </Link>
 
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
-              Eagle4k is a global leader in high-performance 4K Ultra HD IPTV streaming. Enjoy 22,000+ live channels and 80,000+ VOD blockbusters with buffer-free Anti-Freeze v9.0 technology.
+              Eagle4k is a global leader in high-performance 4K Ultra HD IPTV streaming. Enjoy 22,000+ live channels and 80,000+ VOD blockbusters with buffer free Anti Freeze v9.0 technology.
             </p>
 
             <div className="flex items-center gap-2 text-emerald-400 font-semibold text-[11px]">
@@ -81,7 +81,7 @@ export const Footer: React.FC = () => {
               <span>•</span>
               <Link href="/dmca" className="hover:text-amber-400 transition-colors">DMCA Notice</Link>
               <span>•</span>
-              <Link href="/refund-policy" className="hover:text-amber-400 transition-colors">7-Day Refund Policy</Link>
+              <Link href="/refund-policy" className="hover:text-amber-400 transition-colors">7 Day Refund Policy</Link>
             </div>
           </div>
         </div>

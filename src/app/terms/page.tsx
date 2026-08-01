@@ -53,14 +53,14 @@ export default function TermsPage() {
               2. Service Availability & Stream Quality
             </h2>
             <p>
-              Eagle4k provides high-availability 4K, FHD, and HD stream links powered by Anti-Freeze v9.0 technology. Stream performance requires a stable internet bandwidth of at least 15 Mbps for FHD and 30 Mbps for 4K. While we maintain a 99.99% server uptime SLA, occasional temporary maintenance or ISP throttling outside our control may occur.
+              Eagle4k provides high-availability 4K, FHD, and HD stream links powered by Anti Freeze v9.0 technology. Stream performance requires a stable internet bandwidth of at least 15 Mbps for FHD and 30 Mbps for 4K. While we maintain a 99.99% server uptime SLA, occasional temporary maintenance or ISP throttling outside our control may occur.
             </p>
           </section>
 
           <section className="space-y-2 pt-4 border-t border-slate-800/80">
             <h2 className="text-lg font-bold text-white">3. Device Connections & Account Sharing</h2>
             <p>
-              Standard accounts are limited to <strong className="text-white">1 active connection</strong> at a time unless you select the 12-Month Ultimate package or add a Multi-Room connection pass. Concurrent streaming from multiple unauthorized devices may trigger automated server line lock to prevent line re-sharing.
+              Accounts are limited to <strong className="text-white">1 active connection</strong> at a time. Concurrent streaming from multiple unauthorized devices may trigger automated server line lock to prevent line re sharing.
             </p>
           </section>
 

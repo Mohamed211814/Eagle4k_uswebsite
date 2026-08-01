@@ -21,7 +21,7 @@ export const FAQ: React.FC = () => {
     },
     {
       q: 'Can I use one subscription on multiple devices?',
-      a: 'Our standard plans allow 1 active connection at a time. If you select our 12-Month Ultimate plan or choose the Multi-Room option, you get 2 simultaneous device connections for family sharing.',
+      a: 'Our plans allow 1 active connection at a time, allowing you to use your subscription on any compatible device seamlessly.',
     },
     {
       q: 'What Internet speed is required for 4K streaming?',
@@ -29,7 +29,7 @@ export const FAQ: React.FC = () => {
     },
     {
       q: 'What is your refund policy?',
-      a: 'We offer a 7-day risk-free money-back guarantee. If you experience technical issues our support team cannot resolve, we provide a full 100% refund.',
+      a: 'We offer a 7 day risk free money back guarantee. If you experience technical issues our support team cannot resolve, we provide a full 100% refund.',
     },
   ];
 
