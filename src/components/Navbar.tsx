@@ -152,7 +152,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
               className="w-full py-3 text-sm font-bold text-amber-400 bg-amber-500/10 border border-amber-500/40 rounded-xl flex items-center justify-center gap-2 cursor-pointer"
             >
               <Sparkles className="w-4 h-4" />
-              Claim 24H Trial Pass ($1.99)
+              Claim 24H Trial Pass ($1.49)
             </button>
           </div>
         </div>

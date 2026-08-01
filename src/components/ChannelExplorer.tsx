@@ -214,7 +214,7 @@ export const ChannelExplorer: React.FC<ChannelExplorerProps> = ({ onOpenCheckout
             onClick={() => onOpenCheckout('trial-24h')}
             className="px-6 py-3 text-sm font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 rounded-xl transition-all shadow-lg shadow-amber-500/20 shrink-0 cursor-pointer"
           >
-            Get 24H Trial ($1.99)
+            Get 24H Trial ($1.49)
           </button>
         </div>
 

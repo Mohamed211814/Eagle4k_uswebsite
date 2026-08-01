@@ -79,7 +79,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
                 className="w-full sm:w-auto px-7 py-4 text-base font-bold text-amber-400 bg-slate-900/90 border border-amber-500/40 hover:bg-amber-500/10 hover:border-amber-500 rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
               >
                 <Sparkles className="w-5 h-5" />
-                24 Hour Trial ($1.99)
+                24 Hour Trial ($1.49)
               </button>
             </div>
 
