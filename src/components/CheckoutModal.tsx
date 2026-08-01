@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, CheckCircle2, Zap, Copy, Check, Cpu } from 'lucide-react';
-import confetti from 'canvas-confetti';
+import { X, CheckCircle2, Copy, Check, Cpu, MessageCircle, Send, Mail } from 'lucide-react';
 import { PRICING_PLANS, RESELLER_PLANS } from '@/data/pricing';
 
 interface CheckoutModalProps {
@@ -19,14 +18,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   const [selectedPlanId] = useState<string>(initialPlanId);
   const [format, setFormat] = useState<'xtream' | 'm3u' | 'mag'>('xtream');
   const [email, setEmail] = useState<string>('');
-  const [paymentMethod, setPaymentMethod] = useState<'card' | 'paypal' | 'crypto'>('card');
-  const [step, setStep] = useState<'details' | 'success'>('details');
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [copiedField, setCopiedField] = useState<string | null>(null);
-  const [generatedCreds, setGeneratedCreds] = useState<{ user: string; pass: string }>({
-    user: 'user_884920',
-    pass: 'Pass_9988',
-  });
 
   if (!isOpen) return null;
 
@@ -44,38 +36,15 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   const currentPlan = allPlans.find((p) => p.id === selectedPlanId) || allPlans[3];
   const isResellerPack = selectedPlanId.startsWith('reseller-');
 
-  const handleSubmitOrder = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-
-    setIsSubmitting(true);
-    setGeneratedCreds({
-      user: `reseller_${Math.floor(100000 + Math.random() * 900000)}`,
-      pass: `PanelPass_${Math.floor(1000 + Math.random() * 9000)}`,
-    });
-
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setStep('success');
-
-      // Trigger Confetti Celebration
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 },
-      });
-    }, 1500);
-  };
-
-  const handleCopyText = (text: string, fieldName: string) => {
+  const handleCopyText = (text: string, field: string) => {
     navigator.clipboard.writeText(text);
-    setCopiedField(fieldName);
+    setCopiedField(field);
     setTimeout(() => setCopiedField(null), 2000);
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md overflow-y-auto">
-      <div className="relative w-full max-w-xl glass-panel-gold rounded-3xl border border-amber-500/50 shadow-2xl p-6 sm:p-8 animate-in fade-in zoom-in duration-200 text-white my-8">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200">
+      <div className="relative w-full max-w-lg p-6 sm:p-8 bg-slate-950 border border-slate-800 rounded-3xl shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
         
         {/* Close Button */}
         <button
@@ -86,242 +55,176 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
           <X className="w-5 h-5" />
         </button>
 
-        {step === 'details' ? (
-          <form onSubmit={handleSubmitOrder} className="space-y-6">
-            
-            {/* Modal Header */}
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-amber-500/20 text-amber-400 border border-amber-500/40 uppercase">
-                  {isResellerPack ? 'RESELLER PANEL ACTIVATION' : 'FAST AUTO ACTIVATION'}
-                </span>
-              </div>
-              <h2 className="text-2xl font-black text-white mt-1">
-                {isResellerPack ? 'Eagle4k Reseller Panel Checkout' : 'Complete Your Eagle4k Order'}
-              </h2>
-              <p className="text-xs text-slate-300 mt-1">
-                {isResellerPack
-                  ? 'Your Xtream UI Dashboard access & credit balance will be delivered to your email address.'
-                  : 'Credentials & setup instructions will be sent fast to your email address.'}
-              </p>
+        <div className="space-y-6">
+          
+          {/* Modal Header */}
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-amber-500/20 text-amber-400 border border-amber-500/40 uppercase">
+                {isResellerPack ? 'RESELLER PANEL INQUIRY' : 'DIRECT ORDER ASSISTANCE'}
+              </span>
             </div>
+            <h2 className="text-2xl font-black text-white mt-1">
+              {isResellerPack ? 'Order Eagle4k Reseller Panel' : 'Complete Your Eagle4k Order'}
+            </h2>
+            <p className="text-xs text-slate-300 mt-1">
+              Contact our support team directly to complete your payment & receive your login details immediately.
+            </p>
+          </div>
 
-            {/* Selected Plan Summary Box */}
-            <div className="p-4 rounded-2xl bg-slate-950/90 border border-slate-800 space-y-2">
-              <div className="text-xs font-bold text-slate-400">Selected Package:</div>
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="text-base font-black text-white flex items-center gap-2">
-                    {isResellerPack && <Cpu className="w-4 h-4 text-amber-400" />}
-                    {currentPlan.name}
-                  </div>
-                  <div className="text-xs text-amber-400 font-semibold">{currentPlan.duration}</div>
+          {/* Selected Plan Summary Box */}
+          <div className="p-4 rounded-2xl bg-slate-950/90 border border-amber-500/30 space-y-2">
+            <div className="text-xs font-bold text-slate-400">Selected Package:</div>
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="text-base font-black text-white flex items-center gap-2">
+                  {isResellerPack && <Cpu className="w-4 h-4 text-amber-400" />}
+                  {currentPlan.name}
                 </div>
-                <div className="text-2xl font-black text-amber-400">{currentPlan.price}</div>
+                <div className="text-xs text-amber-400 font-semibold">{currentPlan.duration}</div>
               </div>
+              <div className="text-2xl font-black text-amber-400">{currentPlan.price}</div>
             </div>
+          </div>
 
-            {!isResellerPack && (
-              /* Playlist Format Selection (for standard subscriptions) */
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-300">Select IPTV Playlist Format:</label>
-                <div className="grid grid-cols-3 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setFormat('xtream')}
-                    className={`p-2.5 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
-                      format === 'xtream'
-                        ? 'bg-amber-500 text-slate-950 border-amber-500'
-                        : 'bg-slate-900 text-slate-400 border-slate-800'
-                    }`}
-                  >
-                    Xtream API ⭐
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setFormat('m3u')}
-                    className={`p-2.5 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
-                      format === 'm3u'
-                        ? 'bg-amber-500 text-slate-950 border-amber-500'
-                        : 'bg-slate-900 text-slate-400 border-slate-800'
-                    }`}
-                  >
-                    M3U Playlist
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setFormat('mag')}
-                    className={`p-2.5 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
-                      format === 'mag'
-                        ? 'bg-amber-500 text-slate-950 border-amber-500'
-                        : 'bg-slate-900 text-slate-400 border-slate-800'
-                    }`}
-                  >
-                    MAG MAC Portal
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {/* Email Address & Device Selection */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div className="space-y-1 sm:col-span-2">
-                <label className="text-xs font-bold text-slate-300">
-                  {isResellerPack ? 'Reseller Account Email:' : 'Your Delivery Email:'}
-                </label>
-                <input
-                  type="email"
-                  required
-                  placeholder="name@example.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
-                />
-              </div>
-            </div>
-
-            {/* Payment Method Selector */}
+          {!isResellerPack && (
+            /* Playlist Format Selection */
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-300">Select Secure Payment Gateway:</label>
+              <label className="text-xs font-bold text-slate-300">Select IPTV Playlist Format:</label>
               <div className="grid grid-cols-3 gap-2">
                 <button
                   type="button"
-                  onClick={() => setPaymentMethod('card')}
-                  className={`p-2.5 rounded-xl text-xs font-bold border flex items-center justify-center gap-1.5 cursor-pointer ${
-                    paymentMethod === 'card'
-                      ? 'bg-slate-900 border-amber-500 text-white shadow-sm'
-                      : 'bg-slate-950 border-slate-800 text-slate-400'
+                  onClick={() => setFormat('xtream')}
+                  className={`p-2.5 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
+                    format === 'xtream'
+                      ? 'bg-amber-500 text-slate-950 border-amber-500'
+                      : 'bg-slate-900 text-slate-400 border-slate-800'
                   }`}
                 >
-                  <span>💳 Card</span>
+                  Xtream API ⭐
                 </button>
-
                 <button
                   type="button"
-                  onClick={() => setPaymentMethod('paypal')}
-                  className={`p-2.5 rounded-xl text-xs font-bold border flex items-center justify-center gap-1.5 cursor-pointer ${
-                    paymentMethod === 'paypal'
-                      ? 'bg-slate-900 border-amber-500 text-white shadow-sm'
-                      : 'bg-slate-950 border-slate-800 text-slate-400'
+                  onClick={() => setFormat('m3u')}
+                  className={`p-2.5 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
+                    format === 'm3u'
+                      ? 'bg-amber-500 text-slate-950 border-amber-500'
+                      : 'bg-slate-900 text-slate-400 border-slate-800'
                   }`}
                 >
-                  <span>🅿️ PayPal</span>
+                  M3U Playlist
                 </button>
-
                 <button
                   type="button"
-                  onClick={() => setPaymentMethod('crypto')}
-                  className={`p-2.5 rounded-xl text-xs font-bold border flex items-center justify-center gap-1.5 cursor-pointer ${
-                    paymentMethod === 'crypto'
-                      ? 'bg-slate-900 border-amber-500 text-white shadow-sm'
-                      : 'bg-slate-950 border-slate-800 text-slate-400'
+                  onClick={() => setFormat('mag')}
+                  className={`p-2.5 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
+                    format === 'mag'
+                      ? 'bg-amber-500 text-slate-950 border-amber-500'
+                      : 'bg-slate-900 text-slate-400 border-slate-800'
                   }`}
                 >
-                  <span>₿ Crypto</span>
+                  MAG MAC Portal
                 </button>
               </div>
             </div>
+          )}
 
-            {/* Price Summary Row & Submit */}
-            <div className="pt-4 border-t border-slate-800 flex items-center justify-between">
-              <div>
-                <div className="text-xs text-slate-400">Total Due Today:</div>
-                <div className="text-2xl font-black text-amber-400">{currentPlan.price}</div>
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-sm shadow-xl shadow-amber-500/25 transition-all disabled:opacity-50 cursor-pointer flex items-center gap-2"
-              >
-                {isSubmitting ? (
-                  <span>{isResellerPack ? 'Creating Panel...' : 'Activating Stream...'}</span>
-                ) : (
-                  <>
-                    <Zap className="w-4 h-4 fill-slate-950" />
-                    <span>Pay {currentPlan.price} & Activate</span>
-                  </>
-                )}
-              </button>
-            </div>
-
-          </form>
-        ) : (
-          /* Success Screen */
-          <div className="py-6 text-center space-y-6 animate-in fade-in duration-300">
-            <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 mx-auto flex items-center justify-center">
-              <CheckCircle2 className="w-10 h-10" />
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-black text-white">Order Confirmed! 🎉</h2>
-              <p className="text-xs text-slate-300 mt-1">
-                {isResellerPack ? (
-                  <>Your Eagle4k Reseller Dashboard access has been generated for <strong className="text-amber-400">{email}</strong>.</>
-                ) : (
-                  <>Your Eagle4k subscription has been activated for <strong className="text-amber-400">{email}</strong>.</>
-                )}
-              </p>
-            </div>
-
-            {/* Generated Credentials Box */}
-            <div className="p-4 rounded-2xl bg-slate-950/90 border border-amber-500/40 text-left space-y-3 font-mono text-xs">
-              <div className="text-[10px] text-amber-400 font-sans font-bold uppercase tracking-wider">
-                {isResellerPack ? 'YOUR RESELLER DASHBOARD LOGIN:' : 'YOUR XTREAM CODES API ACCESS:'}
-              </div>
-
-              <div className="flex items-center justify-between p-2 rounded bg-slate-900 border border-slate-800">
-                <span className="text-slate-400">{isResellerPack ? 'Panel Portal URL:' : 'Server URL:'}</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-emerald-400 font-bold">http://reseller.eagle4k-cdn.vip</span>
-                  <button
-                    onClick={() => handleCopyText('http://reseller.eagle4k-cdn.vip', 'url')}
-                    className="p-1 text-slate-400 hover:text-white"
-                  >
-                    {copiedField === 'url' ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                  </button>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between p-2 rounded bg-slate-900 border border-slate-800">
-                <span className="text-slate-400">Username:</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-white font-bold">{generatedCreds.user}</span>
-                  <button
-                    onClick={() => handleCopyText(generatedCreds.user, 'user')}
-                    className="p-1 text-slate-400 hover:text-white"
-                  >
-                    {copiedField === 'user' ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                  </button>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between p-2 rounded bg-slate-900 border border-slate-800">
-                <span className="text-slate-400">Password:</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-amber-400 font-bold">{generatedCreds.pass}</span>
-                  <button
-                    onClick={() => handleCopyText(generatedCreds.pass, 'pass')}
-                    className="p-1 text-slate-400 hover:text-white"
-                  >
-                    {copiedField === 'pass' ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <button
-              onClick={() => {
-                setStep('details');
-                onClose();
-              }}
-              className="w-full py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs shadow-lg shadow-amber-500/20 cursor-pointer"
-            >
-              Done & Access Panel
-            </button>
+          {/* Delivery Email Input */}
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-slate-300">Your Delivery Email (Optional):</label>
+            <input
+              type="email"
+              placeholder="name@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs outline-none focus:border-amber-500"
+            />
           </div>
-        )}
 
+          {/* 3 Direct Contact Options */}
+          <div className="space-y-3 pt-2 border-t border-slate-800">
+            <div className="p-3 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-slate-200 text-xs leading-relaxed text-center font-medium">
+              <span className="text-amber-400 font-extrabold block text-sm mb-0.5">💬 Contact Us Directly to Order:</span>
+              Choose any support option below to complete your purchase & receive your login details:
+            </div>
+
+            <div className="grid grid-cols-1 gap-2.5">
+              {/* WhatsApp Option */}
+              <a
+                href={`https://wa.me/0779395271?text=${encodeURIComponent(
+                  `Hello! I want to buy the ${currentPlan.name} (${currentPlan.price}) package. Format: ${format}. My email: ${email || 'Not specified'}.`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-3.5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 text-white transition-all group cursor-pointer"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0">
+                    <MessageCircle className="w-5 h-5" />
+                  </div>
+                  <div className="text-left">
+                    <div className="text-xs font-bold text-white group-hover:text-emerald-400 transition-colors">
+                      Buy via WhatsApp Live Chat
+                    </div>
+                    <div className="text-[10px] text-slate-400 font-mono">0779395271</div>
+                  </div>
+                </div>
+                <span className="text-[11px] font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-lg border border-emerald-500/30 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-all shrink-0">
+                  Chat Now ➔
+                </span>
+              </a>
+
+              {/* Telegram Option */}
+              <a
+                href="https://t.me/contactece"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-3.5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-sky-500/50 text-white transition-all group cursor-pointer"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0">
+                    <Send className="w-5 h-5" />
+                  </div>
+                  <div className="text-left">
+                    <div className="text-xs font-bold text-white group-hover:text-sky-400 transition-colors">
+                      Buy via Telegram Support
+                    </div>
+                    <div className="text-[10px] text-slate-400 font-mono">@contactece</div>
+                  </div>
+                </div>
+                <span className="text-[11px] font-bold text-sky-400 bg-sky-500/10 px-3 py-1.5 rounded-lg border border-sky-500/30 group-hover:bg-sky-500 group-hover:text-slate-950 transition-all shrink-0">
+                  Message ➔
+                </span>
+              </a>
+
+              {/* Email Option */}
+              <a
+                href={`mailto:marwanjahid88@gmail.com?subject=${encodeURIComponent(
+                  `Order Request: ${currentPlan.name}`
+                )}&body=${encodeURIComponent(
+                  `Hello! I want to buy the ${currentPlan.name} (${currentPlan.price}) package. Format: ${format}. My email: ${email || 'Not specified'}.`
+                )}`}
+                className="flex items-center justify-between p-3.5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-amber-500/50 text-white transition-all group cursor-pointer"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div className="text-left truncate max-w-[160px] sm:max-w-xs">
+                    <div className="text-xs font-bold text-white group-hover:text-amber-400 transition-colors">
+                      Buy via Email Support
+                    </div>
+                    <div className="text-[10px] text-slate-400 font-mono truncate">marwanjahid88@gmail.com</div>
+                  </div>
+                </div>
+                <span className="text-[11px] font-bold text-amber-400 bg-amber-500/10 px-3 py-1.5 rounded-lg border border-amber-500/30 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all shrink-0">
+                  Send Email ➔
+                </span>
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   );
