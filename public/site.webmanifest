@@ -1,0 +1,33 @@
+{
+  "name": "Eagle4k - Premium 4K IPTV Subscription",
+  "short_name": "Eagle4k",
+  "description": "Experience buffer-free Ultra HD 4K IPTV streaming with Eagle4k. Over 22,000+ Live Sports & Cinema channels.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07090e",
+  "theme_color": "#FFB800",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
