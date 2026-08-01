@@ -28,30 +28,31 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
           <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
             {/* Live Uptime Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-amber-500/30 text-amber-400 text-xs font-semibold shadow-lg shadow-amber-500/5">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-              </span>
-              <span className="text-white font-bold">Anti Freeze v9.0 Activated</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+              <span className="text-white font-bold">#1 Most Stable IPTV Server</span>
               <span className="text-slate-500">|</span>
-              <span className="text-amber-400">99.99% Server Uptime</span>
+              <span className="text-amber-400 font-bold">Unbeatable Lowest Price</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.1]">
-              Next Gen <span className="text-gradient-gold">Ultra HD 4K</span> IPTV Subscription
+              The Most Stable & Cheapest <span className="text-gradient-gold">Ultra HD 4K IPTV</span> Subscription
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Stream over <strong className="text-white font-semibold">60,000+ Live Premium TV Channels</strong> and <strong className="text-amber-400 font-semibold">160,000+ Movies & Series (VOD)</strong> with buffer free 60FPS high refresh rates on any device.
+              Get access to the most stable Anti Freeze IPTV server at the lowest market price. Stream over <strong className="text-white font-semibold">60,000+ Live TV Channels</strong> and <strong className="text-amber-400 font-semibold">160,000+ Movies & Series (VOD)</strong> with zero lag on any device.
             </p>
 
             {/* Feature Highlights Pills */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs font-medium text-slate-300">
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                <span>99.99% Ultra-Stable Uptime</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 className="w-4 h-4 text-amber-400" />
-                <span>4K HDR & Dolby 5.1</span>
+                <span>Lowest Price Guarantee</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 className="w-4 h-4 text-cyan-400" />
@@ -59,11 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>Fast Auto Delivery</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800">
-                <CheckCircle2 className="w-4 h-4 text-amber-400" />
-                <span>VPN Friendly</span>
+                <span>Fast 2-Min Setup</span>
               </div>
             </div>
 
@@ -74,7 +71,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
                 className="w-full sm:w-auto px-8 py-4 text-base font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 rounded-xl shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 group cursor-pointer"
               >
                 <Zap className="w-5 h-5 fill-slate-950 group-hover:scale-110 transition-transform" />
-                Get Fast Access Now
+                Get Best Price Pass Now
               </button>
 
               <button
