@@ -8,28 +8,28 @@ export const FAQ: React.FC = () => {
 
   const faqs = [
     {
+      q: 'Why is Eagle4k rated the best 4K IPTV provider in 2026?',
+      a: 'Eagle4k operates 6 dedicated CDN edge nodes with Anti Freeze v9.0 load balancing. We offer 60,000+ live TV channels and 160,000+ VOD movies in true 4K 60FPS at the lowest market price with 99.99% uptime.',
+    },
+    {
+      q: 'Is this subscription compatible with Firestick, TiviMate & IPTV Smarters Pro?',
+      a: 'Yes! Eagle4k works natively on Amazon Firestick 4K Max, Android TV, Samsung & LG Smart TVs, Apple TV, MAG boxes, and Formuler. We support TiviMate, IPTV Smarters Pro, IBO Player, and XCIPTV via Xtream Codes API and M3U playlist.',
+    },
+    {
       q: 'How fast will I receive my subscription details after ordering?',
       a: 'Your subscription activation is automated. As soon as payment is confirmed, your Xtream Codes API login credentials and M3U playlist URL are displayed on screen and emailed to you within 2 minutes.',
     },
     {
-      q: 'Do I need a VPN to use Eagle4k?',
-      a: 'No, a VPN is not strictly required. However, Eagle4k is 100% VPN friendly and compatible with NordVPN, ExpressVPN, Surfshark, and all major providers if you prefer maximum privacy.',
+      q: 'Do I need a VPN for IPTV streaming?',
+      a: 'No, a VPN is not required. However, Eagle4k is 100% VPN friendly and compatible with NordVPN, ExpressVPN, Surfshark, and all major providers for maximum security and ISP throttle bypass.',
     },
     {
-      q: 'Which devices and apps are supported?',
-      a: 'Eagle4k supports Amazon Firestick, Android TV boxes, Samsung/LG Smart TVs, Apple TV, iOS/Android phones, MAG boxes, Formuler, Windows PC, and Mac. Popular apps include TiviMate, IPTV Smarters Pro, IBO Player, and GSE Smart IPTV.',
-    },
-    {
-      q: 'Can I use one subscription on multiple devices?',
-      a: 'Our plans allow 1 active connection at a time, allowing you to use your subscription on any compatible device seamlessly.',
-    },
-    {
-      q: 'What Internet speed is required for 4K streaming?',
-      a: 'For 1080p FHD streams, a minimum speed of 15 Mbps is recommended. For 4K Ultra HD 60FPS streams, we recommend a stable connection of 30+ Mbps.',
+      q: 'What internet speed is required for 4K 60FPS streaming?',
+      a: 'For 1080p Full HD streams, a minimum speed of 15 Mbps is recommended. For 4K Ultra HD 60FPS live sports and VOD movies, we recommend a connection of 30+ Mbps.',
     },
     {
       q: 'What is your refund policy?',
-      a: 'We offer a 7 day risk free money back guarantee. If you experience technical issues our support team cannot resolve, we provide a full 100% refund.',
+      a: 'We offer a 7 day risk free money back guarantee. If you experience technical issues our 24/7 VIP support team cannot resolve, we provide a full 100% refund.',
     },
   ];
 

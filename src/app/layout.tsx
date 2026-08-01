@@ -14,9 +14,28 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://eagle4k.us"),
-  title: "Eagle4k Premium 4K IPTV Subscription | 60,000+ Live Channels & VOD",
-  description: "Experience buffer free Ultra HD 4K IPTV streaming with Eagle4k. Over 60,000+ Live Sports & Cinema channels, 160,000+ Movies & Series VOD. Compatible with Firestick, Smart TV, Apple TV, & TiviMate.",
-  keywords: ["Eagle4k", "IPTV subscription", "4K IPTV provider", "Firestick IPTV", "TiviMate 4K", "Live Sports IPTV", "IPTV Smarters Pro", "Xtream Codes API"],
+  title: {
+    default: "Best IPTV Subscription Provider 2026 | Buy 4K IPTV for Firestick & Smart TV",
+    template: "%s | Eagle4k IPTV",
+  },
+  description: "Buy the best 4K IPTV subscription of 2026. Access 60,000+ Live Premium TV Channels, 160,000+ Movies & Series VOD, Anti Freeze v9.0, and 60FPS sports for Firestick, Smart TV, TiviMate & IPTV Smarters Pro.",
+  keywords: [
+    "buy IPTV subscription",
+    "best IPTV provider 2026",
+    "cheap 4K IPTV subscription",
+    "best IPTV for Firestick",
+    "IPTV Smarters Pro 4K",
+    "TiviMate 4K IPTV server",
+    "stable IPTV subscription no buffering",
+    "premium IPTV service UK USA Europe",
+    "best IPTV subscription for live sports",
+    "4K IPTV playlist Xtream API M3U",
+    "Anti Freeze v9.0 IPTV",
+    "cheap IPTV trial 24 hours",
+    "IPTV subscription 12 months",
+    "best reseller IPTV panel",
+    "Eagle4k IPTV",
+  ],
   verification: {
     google: "dI-fGC7yETreRtD-JdDGq7Nn80HHtnCRdui2GCja0no",
     other: {
@@ -39,8 +58,8 @@ export const metadata: Metadata = {
     shortcut: ["/favicon.ico"],
   },
   openGraph: {
-    title: "Eagle4k Ultra HD 4K IPTV Subscription",
-    description: "60,000+ Premium Live TV Channels & 160,000+ Movies VOD with Anti Freeze v9.0 Technology. Fast Auto Delivery.",
+    title: "Best 4K IPTV Subscription Provider 2026 | Eagle4k",
+    description: "Buy cheap 4K IPTV subscription with 60,000+ Live Channels & 160,000+ Movies VOD. Anti Freeze v9.0, TiviMate support & fast activation.",
     siteName: "Eagle4k",
     type: "website",
     images: [
