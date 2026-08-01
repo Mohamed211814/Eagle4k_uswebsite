@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: "Eagle4k - Premium 4K IPTV Subscription | 22,000+ Live Channels & VOD",
   description: "Experience buffer-free Ultra HD 4K IPTV streaming with Eagle4k. Over 22,000+ Live Sports & Cinema channels, 80,000+ Movies & Series VOD. Compatible with Firestick, Smart TV, Apple TV, & TiviMate.",
   keywords: ["Eagle4k", "IPTV subscription", "4K IPTV provider", "Firestick IPTV", "TiviMate 4K", "Live Sports IPTV", "IPTV Smarters Pro", "Xtream Codes API"],
+  verification: {
+    google: "dI-fGC7yETreRtD-JdDGq7Nn80HHtnCRdui2GCja0no",
+  },
   manifest: "/site.webmanifest",
   icons: {
     icon: [
