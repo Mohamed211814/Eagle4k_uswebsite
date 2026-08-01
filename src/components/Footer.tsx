@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Tv, ShieldCheck, ArrowUp, Send, MessageCircle } from 'lucide-react';
+import { Tv, ShieldCheck, ArrowUp, Send, MessageCircle, Mail } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -40,10 +40,9 @@ export const Footer: React.FC = () => {
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">Quick Links</h4>
             <ul className="grid grid-cols-2 gap-2 text-xs">
               <li><Link href="/#pricing" className="hover:text-amber-400 transition-colors">Pricing Plans</Link></li>
-              <li><Link href="/#features" className="hover:text-amber-400 transition-colors">Why Eagle4k</Link></li>
               <li><Link href="/#setup" className="hover:text-amber-400 transition-colors">Setup Guide</Link></li>
-              <li><Link href="/#faq" className="hover:text-amber-400 transition-colors">FAQ</Link></li>
               <li><Link href="/blog" className="hover:text-amber-400 transition-colors">Blog & Guides</Link></li>
+              <li><Link href="/contact" className="hover:text-amber-400 transition-colors">Contact Support</Link></li>
               <li><Link href="/privacy" className="hover:text-amber-400 transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms" className="hover:text-amber-400 transition-colors">Terms of Service</Link></li>
               <li><Link href="/dmca" className="hover:text-amber-400 transition-colors">DMCA Disclaimer</Link></li>
@@ -72,6 +71,13 @@ export const Footer: React.FC = () => {
               >
                 <Send className="w-4 h-4 text-sky-400" />
                 <span>Telegram: <strong>@contactece</strong></span>
+              </a>
+              <a
+                href="mailto:marwanjahid88@gmail.com"
+                className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-500/40 text-slate-300 hover:text-amber-400 transition-all"
+              >
+                <Mail className="w-4 h-4 text-amber-400" />
+                <span>Email: <strong>marwanjahid88@gmail.com</strong></span>
               </a>
             </div>
 

@@ -32,6 +32,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
     { name: 'Pricing Plans', href: '/#pricing' },
     { name: 'Setup Guide', href: '/#setup' },
     { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
