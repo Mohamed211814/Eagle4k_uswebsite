@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Cpu, ShieldCheck, Zap, Tv, Wifi, Globe, RefreshCw, Layers, CheckCircle } from 'lucide-react';
+import { Cpu, Tv, Wifi, Globe, RefreshCw, Layers, CheckCircle } from 'lucide-react';
 
 export const Features: React.FC = () => {
   const featureList = [

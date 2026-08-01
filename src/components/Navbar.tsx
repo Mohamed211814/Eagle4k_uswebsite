@@ -5,12 +5,20 @@ import { Tv, Menu, X, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 interface NavbarProps {
-  onOpenCheckout: (planId?: string) => void;
+  onOpenCheckout?: (planId?: string) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleCheckoutClick = (planId?: string) => {
+    if (onOpenCheckout) {
+      onOpenCheckout(planId);
+    } else {
+      window.location.href = '/#pricing';
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,9 +30,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
 
   const navLinks = [
     { name: 'Pricing Plans', href: '/#pricing' },
-    { name: 'Why Eagle4k', href: '/#features' },
     { name: 'Setup Guide', href: '/#setup' },
-    { name: 'FAQ', href: '/#faq' },
+    { name: 'Blog', href: '/blog' },
   ];
 
   return (
@@ -59,21 +66,34 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-1 lg:gap-2 glass-panel px-4 py-1.5 rounded-full border border-slate-800/60">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-amber-400 hover:bg-slate-800/50 rounded-full transition-all"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              if (link.href.startsWith('/#')) {
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-amber-400 hover:bg-slate-800/50 rounded-full transition-all"
+                  >
+                    {link.name}
+                  </a>
+                );
+              }
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-amber-400 hover:bg-slate-800/50 rounded-full transition-all"
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Action CTAs */}
           <div className="hidden lg:flex items-center gap-3">
             <button
-              onClick={() => onOpenCheckout('trial-24h')}
+              onClick={() => handleCheckoutClick('trial-24h')}
               className="px-5 py-2 text-xs font-bold text-amber-400 bg-amber-500/10 border border-amber-500/40 hover:bg-amber-500/20 rounded-xl transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5" />
@@ -96,23 +116,37 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
       {mobileMenuOpen && (
         <div className="md:hidden glass-panel border-b border-slate-800 px-4 pt-4 pb-6 mt-3 space-y-3 animate-in slide-in-from-top duration-200">
           <div className="flex flex-col space-y-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2.5 text-base font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-900 rounded-lg transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              if (link.href.startsWith('/#')) {
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-4 py-2.5 text-base font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-900 rounded-lg transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                );
+              }
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-4 py-2.5 text-base font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-900 rounded-lg transition-colors"
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="pt-3 border-t border-slate-800/80 flex flex-col gap-2.5">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                onOpenCheckout('trial-24h');
+                handleCheckoutClick('trial-24h');
               }}
               className="w-full py-3 text-sm font-bold text-amber-400 bg-amber-500/10 border border-amber-500/40 rounded-xl flex items-center justify-center gap-2 cursor-pointer"
             >

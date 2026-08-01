@@ -39,10 +39,11 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-4 space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">Quick Links</h4>
             <ul className="grid grid-cols-2 gap-2 text-xs">
-              <li><a href="/#pricing" className="hover:text-amber-400 transition-colors">Pricing Plans</a></li>
-              <li><a href="/#features" className="hover:text-amber-400 transition-colors">Why Eagle4k</a></li>
-              <li><a href="/#setup" className="hover:text-amber-400 transition-colors">Setup Guide</a></li>
-              <li><a href="/#faq" className="hover:text-amber-400 transition-colors">FAQ</a></li>
+              <li><Link href="/#pricing" className="hover:text-amber-400 transition-colors">Pricing Plans</Link></li>
+              <li><Link href="/#features" className="hover:text-amber-400 transition-colors">Why Eagle4k</Link></li>
+              <li><Link href="/#setup" className="hover:text-amber-400 transition-colors">Setup Guide</Link></li>
+              <li><Link href="/#faq" className="hover:text-amber-400 transition-colors">FAQ</Link></li>
+              <li><Link href="/blog" className="hover:text-amber-400 transition-colors">Blog & Guides</Link></li>
               <li><Link href="/privacy" className="hover:text-amber-400 transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms" className="hover:text-amber-400 transition-colors">Terms of Service</Link></li>
               <li><Link href="/dmca" className="hover:text-amber-400 transition-colors">DMCA Disclaimer</Link></li>

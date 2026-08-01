@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Check, Zap, ShieldCheck, Flame, Cpu, Star } from 'lucide-react';
+import { Check, Zap, ShieldCheck, Flame, Cpu } from 'lucide-react';
 import { PRICING_PLANS, RESELLER_PLANS } from '@/data/pricing';
 
 interface PricingProps {

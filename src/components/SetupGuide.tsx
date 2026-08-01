@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Tv, Monitor, Smartphone, Box, Laptop, Download, HelpCircle, CheckCircle2 } from 'lucide-react';
-import { SETUP_DEVICES, SetupDevice } from '@/data/pricing';
+import { Tv, Monitor, Smartphone, Box, Laptop, Download, HelpCircle } from 'lucide-react';
+import { SETUP_DEVICES } from '@/data/pricing';
 
 export const SetupGuide: React.FC = () => {
   const [activeDevice, setActiveDevice] = useState<string>('firestick');

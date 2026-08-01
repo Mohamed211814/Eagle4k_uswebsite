@@ -44,7 +44,7 @@ export const FAQ: React.FC = () => {
             FREQUENTLY ASKED QUESTIONS
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-            Got Questions? <span className="text-gradient-gold">We've Got Answers</span>
+            Got Questions? <span className="text-gradient-gold">We&apos;ve Got Answers</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
             Everything you need to know about Eagle4k setup, channel availability, and streaming performance.

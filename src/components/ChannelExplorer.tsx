@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Search, Tv, Trophy, Globe, Film, Star, Zap, Smile, Compass, CheckCircle2, Play, Sparkles, Filter } from 'lucide-react';
-import { CATEGORIES, FEATURED_CHANNELS, VOD_SAMPLE, ChannelItem } from '@/data/channels';
+import { Search, Tv, Globe, Film, Star, Sparkles } from 'lucide-react';
+import { CATEGORIES, FEATURED_CHANNELS, VOD_SAMPLE } from '@/data/channels';
 
 interface ChannelExplorerProps {
   onOpenCheckout: (planId?: string) => void;

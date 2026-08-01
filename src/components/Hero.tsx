@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Play, ShieldCheck, Zap, Star, Tv, Cpu, Radio, Sparkles, CheckCircle2, Flame } from 'lucide-react';
+import { Play, Zap, Star, Tv, Cpu, Radio, CheckCircle2, Flame, Sparkles } from 'lucide-react';
 
 interface HeroProps {
   onOpenCheckout: (planId?: string) => void;
@@ -12,7 +12,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
   const [activeTab, setActiveTab] = useState<'sports' | 'movies' | 'live'>('sports');
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-slate-950">
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-slate-950" suppressHydrationWarning>
       {/* Dynamic Background Glow Effects */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[140px] pointer-events-none animate-pulse-glow" />
       <div className="absolute top-1/3 right-10 w-[450px] h-[450px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />

@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { X, CheckCircle2, ShieldCheck, Zap, Lock, Tv, Sparkles, CreditCard, Copy, Check, Cpu } from 'lucide-react';
+import React, { useState } from 'react';
+import { X, CheckCircle2, Zap, Copy, Check, Cpu } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { PRICING_PLANS, RESELLER_PLANS } from '@/data/pricing';
 
@@ -16,21 +16,17 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   onClose,
   initialPlanId = 'plan-12m',
 }) => {
-  const [selectedPlanId, setSelectedPlanId] = useState<string>(initialPlanId);
+  const [selectedPlanId] = useState<string>(initialPlanId);
   const [format, setFormat] = useState<'xtream' | 'm3u' | 'mag'>('xtream');
-  const [deviceType, setDeviceType] = useState<string>('Firestick / Android TV');
-  const [macAddress, setMacAddress] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [paymentMethod, setPaymentMethod] = useState<'card' | 'paypal' | 'crypto'>('card');
   const [step, setStep] = useState<'details' | 'success'>('details');
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [copiedField, setCopiedField] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (initialPlanId) {
-      setSelectedPlanId(initialPlanId);
-    }
-  }, [initialPlanId]);
+  const [generatedCreds, setGeneratedCreds] = useState<{ user: string; pass: string }>({
+    user: 'user_884920',
+    pass: 'Pass_9988',
+  });
 
   if (!isOpen) return null;
 
@@ -53,6 +49,10 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
     if (!email) return;
 
     setIsSubmitting(true);
+    setGeneratedCreds({
+      user: `reseller_${Math.floor(100000 + Math.random() * 900000)}`,
+      pass: `PanelPass_${Math.floor(1000 + Math.random() * 9000)}`,
+    });
 
     setTimeout(() => {
       setIsSubmitting(false);
@@ -286,9 +286,9 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               <div className="flex items-center justify-between p-2 rounded bg-slate-900 border border-slate-800">
                 <span className="text-slate-400">Username:</span>
                 <div className="flex items-center gap-2">
-                  <span className="text-white font-bold">reseller_{Math.floor(100000 + Math.random() * 900000)}</span>
+                  <span className="text-white font-bold">{generatedCreds.user}</span>
                   <button
-                    onClick={() => handleCopyText('reseller_active', 'user')}
+                    onClick={() => handleCopyText(generatedCreds.user, 'user')}
                     className="p-1 text-slate-400 hover:text-white"
                   >
                     {copiedField === 'user' ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
@@ -299,9 +299,9 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               <div className="flex items-center justify-between p-2 rounded bg-slate-900 border border-slate-800">
                 <span className="text-slate-400">Password:</span>
                 <div className="flex items-center gap-2">
-                  <span className="text-amber-400 font-bold">PanelPass_{Math.floor(1000 + Math.random() * 9000)}</span>
+                  <span className="text-amber-400 font-bold">{generatedCreds.pass}</span>
                   <button
-                    onClick={() => handleCopyText('PanelPass_9988', 'pass')}
+                    onClick={() => handleCopyText(generatedCreds.pass, 'pass')}
                     className="p-1 text-slate-400 hover:text-white"
                   >
                     {copiedField === 'pass' ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}

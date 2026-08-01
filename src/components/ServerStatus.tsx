@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Activity, Server, Signal, CheckCircle2, Play, RefreshCw, Zap } from 'lucide-react';
+import { Activity, Server, Signal, CheckCircle2, RefreshCw, Zap } from 'lucide-react';
 
 export const ServerStatus: React.FC = () => {
   const [testing, setTesting] = useState(false);

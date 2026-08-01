@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Star, ShieldCheck, CheckCircle2, Lock, CreditCard } from 'lucide-react';
+import { Star, Lock } from 'lucide-react';
 
 export const Testimonials: React.FC = () => {
   const reviews = [
@@ -72,7 +72,7 @@ export const Testimonials: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs text-slate-300 leading-relaxed italic">
-                  "{r.comment}"
+                  &quot;{r.comment}&quot;
                 </p>
               </div>
 
