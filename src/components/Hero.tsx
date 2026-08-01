@@ -97,6 +97,22 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
               </p>
             </div>
 
+            {/* Simple 3-Step Process for Clients */}
+            <div className="pt-4 grid grid-cols-3 gap-2 border-t border-slate-800/60">
+              <div className="flex items-center gap-2 bg-slate-900/60 p-2.5 rounded-xl border border-slate-800/80">
+                <div className="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0">1</div>
+                <div className="text-xs text-slate-200 font-semibold">1. Select Plan</div>
+              </div>
+              <div className="flex items-center gap-2 bg-slate-900/60 p-2.5 rounded-xl border border-slate-800/80">
+                <div className="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0">2</div>
+                <div className="text-xs text-slate-200 font-semibold">2. Get Credentials</div>
+              </div>
+              <div className="flex items-center gap-2 bg-slate-900/60 p-2.5 rounded-xl border border-slate-800/80">
+                <div className="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0">3</div>
+                <div className="text-xs text-slate-200 font-semibold">3. Watch 4K IPTV</div>
+              </div>
+            </div>
+
           </div>
 
           {/* Right Column: High Tech Interactive Player Mockup */}
