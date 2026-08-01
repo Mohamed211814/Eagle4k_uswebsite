@@ -93,7 +93,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-amber-500/20 text-amber-400 border border-amber-500/40 uppercase">
-                  {isResellerPack ? 'RESELLER PANEL ACTIVATION' : 'INSTANT AUTO ACTIVATION'}
+                  {isResellerPack ? 'RESELLER PANEL ACTIVATION' : 'FAST AUTO ACTIVATION'}
                 </span>
               </div>
               <h2 className="text-2xl font-black text-white mt-1">
@@ -102,7 +102,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               <p className="text-xs text-slate-300 mt-1">
                 {isResellerPack
                   ? 'Your Xtream UI Dashboard access & credit balance will be delivered to your email address.'
-                  : 'Credentials & setup instructions will be sent instantly to your email address.'}
+                  : 'Credentials & setup instructions will be sent fast to your email address.'}
               </p>
             </div>
 
@@ -267,7 +267,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             {/* Generated Credentials Box */}
             <div className="p-4 rounded-2xl bg-slate-950/90 border border-amber-500/40 text-left space-y-3 font-mono text-xs">
               <div className="text-[10px] text-amber-400 font-sans font-bold uppercase tracking-wider">
-                {isResellerPack ? 'YOUR RESELLER DASHBOARD LOGIN:' : 'YOUR INSTANT XTREAM CODES API ACCESS:'}
+                {isResellerPack ? 'YOUR RESELLER DASHBOARD LOGIN:' : 'YOUR XTREAM CODES API ACCESS:'}
               </div>
 
               <div className="flex items-center justify-between p-2 rounded bg-slate-900 border border-slate-800">

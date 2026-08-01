@@ -36,7 +36,7 @@ export const ChannelExplorer: React.FC<ChannelExplorerProps> = ({ onOpenCheckout
             UNLIMITED ENTERTAINMENT CATALOG
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            Explore <span className="text-gradient-gold">22,000+ Channels</span> & 80,000+ VODs
+            Explore <span className="text-gradient-gold">60,000+ Channels</span> & 160,000+ VODs
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
             High bit-rate 4K Ultra HD & 60FPS live feeds. Search below or filter by category to inspect our line-up.
@@ -55,7 +55,7 @@ export const ChannelExplorer: React.FC<ChannelExplorerProps> = ({ onOpenCheckout
               }`}
             >
               <Tv className="w-4 h-4" />
-              Live TV Channels (22,000+)
+              Live TV Channels (60,000+)
             </button>
             <button
               onClick={() => setActiveTab('vod')}
@@ -66,7 +66,7 @@ export const ChannelExplorer: React.FC<ChannelExplorerProps> = ({ onOpenCheckout
               }`}
             >
               <Film className="w-4 h-4" />
-              Movies & Series VOD (80,000+)
+              Movies & Series VOD (160,000+)
             </button>
           </div>
         </div>
@@ -168,7 +168,7 @@ export const ChannelExplorer: React.FC<ChannelExplorerProps> = ({ onOpenCheckout
                   DOLBY VISION & ATMOS SUPPORT
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-black text-white mt-1">
-                  80,000+ VOD Movies & Complete TV Series Box-sets
+                  160,000+ VOD Movies & Complete TV Series Box-sets
                 </h3>
                 <p className="text-slate-300 text-sm max-w-2xl mt-2">
                   Updated daily with latest cinema releases, Netflix, HBO, Disney+, Amazon Prime originals & multi-subtitles in 15+ languages.
@@ -207,7 +207,7 @@ export const ChannelExplorer: React.FC<ChannelExplorerProps> = ({ onOpenCheckout
             </div>
             <div>
               <h3 className="text-base font-bold text-white">Want to test your favorite channel list right now?</h3>
-              <p className="text-xs text-slate-400">Claim a 24-Hour Trial pass for instant setup on your TV or Firestick.</p>
+              <p className="text-xs text-slate-400">Claim a 24-Hour Trial pass for fast setup on your TV or Firestick.</p>
             </div>
           </div>
           <button

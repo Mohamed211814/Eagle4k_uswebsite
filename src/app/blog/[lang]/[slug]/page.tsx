@@ -235,7 +235,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="mt-12 glass-panel-gold p-8 rounded-3xl border border-amber-500/40 text-center space-y-4">
             <h3 className="text-2xl font-black text-white">Ready for Buffer-Free 4K IPTV?</h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
-              Get instant access to 22,000+ live channels and 80,000+ VOD movies with Anti Freeze v9.0 technology.
+              Get fast access to 60,000+ live channels and 160,000+ VOD movies with Anti Freeze v9.0 technology.
             </p>
             <div className="pt-2">
               <Link

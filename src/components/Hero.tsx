@@ -44,7 +44,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
 
             {/* Subheadline */}
             <p className="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Stream over <strong className="text-white font-semibold">22,000+ Live Premium TV Channels</strong> and <strong className="text-amber-400 font-semibold">80,000+ Movies & Series (VOD)</strong> with buffer free 60FPS high refresh rates on any device.
+              Stream over <strong className="text-white font-semibold">60,000+ Live Premium TV Channels</strong> and <strong className="text-amber-400 font-semibold">160,000+ Movies & Series (VOD)</strong> with buffer free 60FPS high refresh rates on any device.
             </p>
 
             {/* Feature Highlights Pills */}
@@ -59,7 +59,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>Instant Auto Delivery</span>
+                <span>Fast Auto Delivery</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 className="w-4 h-4 text-amber-400" />
@@ -74,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
                 className="w-full sm:w-auto px-8 py-4 text-base font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 rounded-xl shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 group cursor-pointer"
               >
                 <Zap className="w-5 h-5 fill-slate-950 group-hover:scale-110 transition-transform" />
-                Get Instant Access Now
+                Get Fast Access Now
               </button>
 
               <button
@@ -202,7 +202,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
                     }`}
                   >
                     <Cpu className="w-3.5 h-3.5" />
-                    22,000+ TV
+                    60,000+ TV
                   </button>
                 </div>
 
@@ -214,7 +214,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
                   ⚡
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-white">Instant Server Delivery</div>
+                  <div className="text-xs font-bold text-white">Fast Server Delivery</div>
                   <div className="text-[10px] text-amber-300 font-medium">Xtream API & M3U Link in 2 Mins</div>
                 </div>
               </div>
@@ -227,11 +227,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
         {/* Global Key Stats Metric Row */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-2xl glass-panel border border-slate-800/80">
           <div className="text-center p-3 border-r border-slate-800/80 last:border-r-0">
-            <div className="text-3xl sm:text-4xl font-black text-amber-400 font-sans">22,000+</div>
+            <div className="text-3xl sm:text-4xl font-black text-amber-400 font-sans">60,000+</div>
             <div className="text-xs text-slate-400 font-medium mt-1">Live Premium TV Channels</div>
           </div>
           <div className="text-center p-3 border-r border-slate-800/80 last:border-r-0">
-            <div className="text-3xl sm:text-4xl font-black text-cyan-400 font-sans">80,000+</div>
+            <div className="text-3xl sm:text-4xl font-black text-cyan-400 font-sans">160,000+</div>
             <div className="text-xs text-slate-400 font-medium mt-1">4K Movies & Series VOD</div>
           </div>
           <div className="text-center p-3 border-r border-slate-800/80 last:border-r-0">
@@ -240,7 +240,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
           </div>
           <div className="text-center p-3">
             <div className="text-3xl sm:text-4xl font-black text-white font-sans">&lt; 2 Mins</div>
-            <div className="text-xs text-slate-400 font-medium mt-1">Instant Auto Activation</div>
+            <div className="text-xs text-slate-400 font-medium mt-1">Fast Auto Activation</div>
           </div>
         </div>
 
