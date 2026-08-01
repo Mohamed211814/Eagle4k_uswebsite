@@ -78,6 +78,124 @@ export const metadata: Metadata = {
     "IPTV free trial",
     "IPTV trial",
     "IPTV subscription free trial",
+    // Quality & Performance Keywords
+    "4K IPTV",
+    "HD IPTV",
+    "FHD IPTV",
+    "UHD IPTV",
+    "IPTV no buffering",
+    "IPTV without buffering",
+    "fast IPTV",
+    "reliable IPTV",
+    "stable IPTV",
+    "premium IPTV",
+    "high quality IPTV",
+
+    // Features & Content
+    "IPTV multiple devices",
+    "IPTV multi device",
+    "IPTV with VOD",
+    "IPTV live TV",
+    "IPTV movies and series",
+    "IPTV sports channels",
+
+    // Apps & Players
+    "IPTV app",
+    "best IPTV app",
+    "IPTV player",
+    "best IPTV player",
+    "IPTV Smarters",
+    "IPTV Smarters Pro",
+    "TiviMate IPTV",
+    "IPTV app for Firestick",
+    "IPTV app for Smart TV",
+    "IPTV app for Android",
+    "IPTV player for Android",
+    "IPTV player for iPhone",
+    "best IPTV app for Smart TV",
+
+    // Informational & How-To
+    "what is IPTV",
+    "how does IPTV work",
+    "how to use IPTV",
+    "how to install IPTV",
+    "how to set up IPTV",
+    "how to watch IPTV",
+    "how to get IPTV",
+    "IPTV explained",
+    "IPTV vs cable",
+    "IPTV vs satellite",
+    "IPTV vs streaming services",
+    "is IPTV legal",
+    "IPTV benefits",
+    "IPTV advantages",
+    "best IPTV apps",
+    "best IPTV players",
+    "how to install IPTV on Firestick",
+    "how to install IPTV on Smart TV",
+    "how to install IPTV on Android TV",
+
+    // USA
+    "IPTV USA",
+    "best IPTV USA",
+    "best IPTV service USA",
+    "IPTV subscription USA",
+    "IPTV provider USA",
+    "USA IPTV",
+    "IPTV for USA",
+    "premium IPTV USA",
+
+    // UK
+    "IPTV UK",
+    "best IPTV UK",
+    "IPTV subscription UK",
+    "best IPTV service UK",
+    "IPTV provider UK",
+    "UK IPTV",
+    "cheap IPTV UK",
+
+    // Canada
+    "IPTV Canada",
+    "best IPTV Canada",
+    "IPTV subscription Canada",
+    "best IPTV service Canada",
+    "IPTV provider Canada",
+
+    // France
+    "IPTV France",
+    "IPTV abonnement",
+    "abonnement IPTV",
+    "meilleur IPTV",
+    "meilleur abonnement IPTV",
+    "IPTV France abonnement",
+    "IPTV premium France",
+
+    // Germany
+    "IPTV Deutschland",
+    "IPTV Germany",
+    "IPTV Anbieter",
+    "IPTV Abonnement",
+    "best IPTV Germany",
+
+    // Australia
+    "IPTV Australia",
+    "best IPTV Australia",
+    "IPTV subscription Australia",
+    "IPTV provider Australia",
+
+    // Italy
+    "IPTV Italia",
+    "IPTV Italy",
+    "abbonamento IPTV",
+    "miglior IPTV",
+
+    // Spain
+    "IPTV España",
+    "IPTV Spain",
+    "suscripción IPTV",
+    "mejor IPTV",
+
+    // Core Brand & Tech
     "Eagle4k IPTV",
     "TiviMate 4K IPTV server",
     "IPTV Smarters Pro 4K",
