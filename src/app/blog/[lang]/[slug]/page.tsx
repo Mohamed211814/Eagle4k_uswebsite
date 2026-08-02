@@ -12,7 +12,7 @@ import {
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
-import { ArrowLeft, Clock, Calendar, User, Tag } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, User, Tag, ArrowRight, Sparkles } from 'lucide-react';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -232,17 +232,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           )}
 
           {/* Call to Action Box */}
-          <div className="mt-12 glass-panel-gold p-8 rounded-3xl border border-amber-500/40 text-center space-y-4">
-            <h3 className="text-2xl font-black text-white">Ready for Buffer-Free 4K IPTV?</h3>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
-              Get fast access to 60,000+ live channels and 160,000+ VOD movies with Anti Freeze v9.0 technology.
+          <div className="mt-12 glass-panel-gold p-8 sm:p-12 rounded-3xl border border-amber-500/40 text-center space-y-5 shadow-2xl">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
+              <Sparkles className="w-4 h-4" />
+              <span>Instant 4K Activation</span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">Ready for Buffer-Free 4K IPTV?</h3>
+            <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
+              Get fast access to 60,000+ live channels and 160,000+ VOD movies with Anti-Freeze v9.0 technology.
             </p>
-            <div className="pt-2">
+            <div className="pt-3">
               <Link
                 href="/#pricing"
-                className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black text-xs shadow-xl shadow-amber-500/25 hover:scale-105 transition-transform inline-block"
+                className="w-full sm:w-auto px-8 py-4 sm:px-10 sm:py-4.5 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 font-black text-base sm:text-lg uppercase tracking-wider shadow-2xl shadow-amber-500/35 hover:shadow-amber-500/50 hover:scale-105 active:scale-95 transition-all duration-300 inline-flex items-center justify-center gap-3 group"
               >
-                Get Eagle4k Subscription Now
+                <span>Get Eagle4k Subscription Now</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
