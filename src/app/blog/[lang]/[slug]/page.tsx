@@ -232,22 +232,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           )}
 
           {/* Call to Action Box */}
-          <div className="mt-12 glass-panel-gold p-6 sm:p-8 rounded-3xl border border-amber-500/40 text-center space-y-4 shadow-xl">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[11px] font-bold uppercase tracking-wider">
+          <div className="mt-12 glass-panel-gold p-5 sm:p-8 rounded-3xl border border-amber-500/40 text-center space-y-3.5 shadow-xl">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Instant 4K Activation</span>
             </div>
-            <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">Ready for Buffer-Free 4K IPTV?</h3>
+            <h3 className="text-lg sm:text-2xl font-black text-white tracking-tight">Ready for Buffer-Free 4K IPTV?</h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-lg mx-auto leading-relaxed">
-              Get fast access to 60,000+ live channels and 160,000+ VOD movies with Anti-Freeze v9.0 technology.
+              Get fast access to 60,000+ live channels and 160,000+ VOD movies with Anti Freeze v9.0 technology.
             </p>
-            <div className="pt-1.5">
+            <div className="pt-1">
               <Link
                 href="/#pricing"
-                className="w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-3.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 font-black text-sm sm:text-base uppercase tracking-wider shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-105 active:scale-95 transition-all duration-300 inline-flex items-center justify-center gap-2 group"
+                className="px-5 py-2.5 sm:px-8 sm:py-3.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 font-black text-xs sm:text-base uppercase tracking-wider shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-105 active:scale-95 transition-all duration-300 inline-flex items-center justify-center gap-2 group"
               >
                 <span>Get Eagle4k Subscription Now</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
