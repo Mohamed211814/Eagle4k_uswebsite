@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { X, Cpu, MessageCircle, ChevronDown } from 'lucide-react';
 import { PRICING_PLANS, RESELLER_PLANS } from '@/data/pricing';
 
@@ -16,14 +16,13 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   initialPlanId = 'plan-12m',
 }) => {
   const [selectedPlanId, setSelectedPlanId] = useState<string>(initialPlanId);
+  const [prevInitialPlanId, setPrevInitialPlanId] = useState<string>(initialPlanId);
   const [format, setFormat] = useState<'xtream' | 'm3u' | 'mag'>('xtream');
 
-  // Sync state whenever initialPlanId or isOpen changes
-  useEffect(() => {
-    if (isOpen && initialPlanId) {
-      setSelectedPlanId(initialPlanId);
-    }
-  }, [initialPlanId, isOpen]);
+  if (prevInitialPlanId !== initialPlanId) {
+    setPrevInitialPlanId(initialPlanId);
+    setSelectedPlanId(initialPlanId);
+  }
 
   if (!isOpen) return null;
 
