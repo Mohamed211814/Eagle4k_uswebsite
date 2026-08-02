@@ -19,9 +19,7 @@ export default function Home() {
   const [selectedPlanId, setSelectedPlanId] = useState<string>('plan-12m');
 
   const handleOpenCheckout = (planId?: string) => {
-    if (planId) {
-      setSelectedPlanId(planId);
-    }
+    setSelectedPlanId(planId || 'plan-12m');
     setCheckoutOpen(true);
   };
 
