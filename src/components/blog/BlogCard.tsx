@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { Clock, ArrowRight } from 'lucide-react';
 import { BlogPost, PostTranslation, SupportedLanguage } from '@/types/blog';
@@ -42,7 +42,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ post, translation, language 
           </div>
 
           <h3 className="text-xl font-bold text-white group-hover:text-amber-400 transition-colors line-clamp-2">
-            <Link href={`/blog/${language}/${post.slug}`}>
+            <Link href={`/blog/${post.slug}`}>
               {translation.title}
             </Link>
           </h3>
@@ -67,11 +67,11 @@ export const BlogCard: React.FC<BlogCardProps> = ({ post, translation, language 
         </div>
 
         <Link
-          href={`/blog/${language}/${post.slug}`}
+          href={`/blog/${post.slug}`}
           className="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform"
         >
           <span>Read Article</span>
-          <ArrowRight className="w-3.5 h-3.5" />
+          <ArrowRight className="w-3.5 h-3.5 ltr:rotate-0 rtl:rotate-180" />
         </Link>
       </div>
     </article>

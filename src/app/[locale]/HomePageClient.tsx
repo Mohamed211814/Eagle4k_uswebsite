@@ -14,7 +14,7 @@ import { Footer } from '@/components/Footer';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { CheckoutModal } from '@/components/CheckoutModal';
 
-export default function Home() {
+export function HomePageClient() {
   const [checkoutOpen, setCheckoutOpen] = useState<boolean>(false);
   const [selectedPlanId, setSelectedPlanId] = useState<string>('plan-12m');
 

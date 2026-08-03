@@ -1,19 +1,22 @@
-export type SupportedLanguage = 'en' | 'fr' | 'nl' | 'ar';
+export type SupportedLanguage = 'en' | 'fr' | 'nl' | 'ar' | 'es';
 
 export const SUPPORTED_LANGUAGES: { code: SupportedLanguage; name: string; nativeName: string; flag: string }[] = [
   { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸' },
   { code: 'fr', name: 'French', nativeName: 'Français', flag: '🇫🇷' },
   { code: 'nl', name: 'Dutch', nativeName: 'Nederlands', flag: '🇳🇱' },
   { code: 'ar', name: 'Arabic', nativeName: 'العربية', flag: '🇸🇦' },
+  { code: 'es', name: 'Spanish', nativeName: 'Español', flag: '🇪🇸' },
 ];
 
 export interface PostTranslation {
   language: SupportedLanguage;
   title: string;
+  slug?: string;
   excerpt: string;
   content: string; // Markdown or HTML formatted content
   metaTitle: string;
   metaDescription: string;
+  status?: 'draft' | 'published';
 }
 
 export interface BlogPost {
@@ -30,5 +33,7 @@ export interface BlogPost {
   publishDate: string;
   updatedDate?: string;
   readTimeMinutes: number;
+  featured?: boolean;
+  status?: 'draft' | 'published';
   translations: Partial<Record<SupportedLanguage, PostTranslation>>;
 }
