@@ -28,12 +28,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
           
           {/* Left Column: Headline & Value Proposition */}
           <div className="lg:col-span-7 space-y-8 text-center ltr:lg:text-left rtl:lg:text-right">
-            {/* Live Uptime Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-amber-500/30 text-amber-400 text-xs font-semibold shadow-lg shadow-amber-500/5">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              <span className="text-white font-bold">{t('badge')}</span>
-            </div>
-
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.1]">
               {t('titlePrefix')} <span className="text-gradient-gold">{t('titleHighlight')}</span>
@@ -89,7 +83,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
             <div className="glass-panel p-6 rounded-3xl border border-slate-800 relative shadow-2xl space-y-6">
               <div className="relative aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-inner group">
                 <Image
-                  src="/images/hero_sports.png"
+                  src="/images/hero_banner.png"
                   alt="Eagle4k Ultra HD IPTV 60FPS Sports Streaming"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
