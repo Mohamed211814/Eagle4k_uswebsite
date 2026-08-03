@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Tv, ShieldCheck, Mail, MessageCircle, Heart } from 'lucide-react';
+import { Tv, ShieldCheck, Mail, MessageCircle, Heart, Send } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -84,10 +84,24 @@ export const Footer: React.FC = () => {
                 <Mail className="w-4 h-4 text-amber-400" />
                 <span>marwanjahid88@gmail.com</span>
               </div>
-              <div className="flex items-center gap-2 text-emerald-400">
+              <a
+                href="https://wa.me/212779395271"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors"
+              >
                 <MessageCircle className="w-4 h-4" />
-                <span>WhatsApp Live Chat</span>
-              </div>
+                <span>WhatsApp (+212 779 395 271)</span>
+              </a>
+              <a
+                href="https://t.me/contactece"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sky-400 hover:text-sky-300 transition-colors"
+              >
+                <Send className="w-4 h-4" />
+                <span>Telegram Support</span>
+              </a>
             </div>
           </div>
         </div>

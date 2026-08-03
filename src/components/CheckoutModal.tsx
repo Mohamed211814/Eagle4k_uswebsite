@@ -164,7 +164,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             </div>
 
             <a
-              href={`https://wa.me/0779395271?text=${encodeURIComponent(
+              href={`https://wa.me/212779395271?text=${encodeURIComponent(
                 `Hello! I want to buy the ${currentPlan.name} (${currentPlan.price}) package. Format: ${format}.`
               )}`}
               target="_blank"

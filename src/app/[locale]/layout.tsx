@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
-import { SupportedLanguage } from '@/types/blog';
+import { WhatsAppButton } from '@/components/WhatsAppButton';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -29,6 +29,8 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     <NextIntlClientProvider messages={messages} locale={locale}>
       <div dir={isRtl ? 'rtl' : 'ltr'} lang={locale} className={`min-h-full flex flex-col ${isRtl ? 'font-sans-rtl' : ''}`}>
         {children}
+        {/* Global Floating WhatsApp and Telegram Support Buttons (Rendered on all pages including posts) */}
+        <WhatsAppButton />
       </div>
     </NextIntlClientProvider>
   );

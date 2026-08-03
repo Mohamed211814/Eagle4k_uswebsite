@@ -11,7 +11,6 @@ import { ServerStatus } from '@/components/ServerStatus';
 import { Testimonials } from '@/components/Testimonials';
 import { FAQ } from '@/components/FAQ';
 import { Footer } from '@/components/Footer';
-import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { CheckoutModal } from '@/components/CheckoutModal';
 
 export function HomePageClient() {
@@ -54,9 +53,6 @@ export function HomePageClient() {
 
       {/* Footer */}
       <Footer />
-
-      {/* Floating 24/7 Support */}
-      <WhatsAppButton />
 
       {/* Interactive Checkout Order Modal */}
       <CheckoutModal

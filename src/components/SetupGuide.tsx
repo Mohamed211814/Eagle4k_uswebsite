@@ -116,12 +116,12 @@ export const SetupGuide: React.FC = () => {
               <span>Need help installing? Our 24/7 technical team can assist you remotely!</span>
             </div>
             <a
-              href="https://wa.me/0779395271"
+              href="https://wa.me/212779395271"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-bold hover:bg-emerald-500/20 transition-all"
             >
-              Contact Live Setup Support (0779395271)
+              Contact Live Setup Support (+212 779 395 271)
             </a>
           </div>
 

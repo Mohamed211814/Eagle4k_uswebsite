@@ -66,13 +66,13 @@ export function ContactPageClient() {
                 </div>
               </div>
               <a
-                href="https://wa.me/212600000000"
+                href="https://wa.me/212779395271"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3 px-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 text-xs font-bold transition-all text-center flex items-center justify-center gap-2 cursor-pointer shadow-md"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>Open WhatsApp Chat</span>
+                <span>Open WhatsApp Chat (+212 779 395 271)</span>
               </a>
             </div>
 
@@ -116,13 +116,13 @@ export function ContactPageClient() {
                 </div>
               </div>
               <a
-                href="https://t.me/eagle4k_support"
+                href="https://t.me/contactece"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3 px-4 rounded-2xl bg-cyan-500/10 border border-cyan-500/40 text-cyan-400 hover:bg-cyan-500 hover:text-slate-950 text-xs font-bold transition-all text-center flex items-center justify-center gap-2 cursor-pointer shadow-md"
               >
                 <SendHorizontal className="w-4 h-4" />
-                <span>Join Telegram Channel</span>
+                <span>Open Telegram Support</span>
               </a>
             </div>
           </div>
