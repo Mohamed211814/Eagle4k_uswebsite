@@ -9,7 +9,7 @@ export const WhatsAppButton: React.FC = () => {
       {/* Telegram Circular Icon Button */}
       <div className="relative group">
         <a
-          href="https://t.me/contactece"
+          href="https://t.me/contactexe"
           target="_blank"
           rel="noopener noreferrer"
           className="w-12 h-12 rounded-full bg-sky-500 hover:bg-sky-400 text-slate-950 flex items-center justify-center shadow-xl shadow-sky-500/30 hover:scale-110 transition-all duration-200 border border-sky-300/30 cursor-pointer"

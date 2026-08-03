@@ -94,7 +94,7 @@ export const Footer: React.FC = () => {
                 <span>WhatsApp (+212 779 395 271)</span>
               </a>
               <a
-                href="https://t.me/contactece"
+                href="https://t.me/contactexe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sky-400 hover:text-sky-300 transition-colors"

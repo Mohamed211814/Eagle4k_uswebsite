@@ -116,7 +116,7 @@ export function ContactPageClient() {
                 </div>
               </div>
               <a
-                href="https://t.me/contactece"
+                href="https://t.me/contactexe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3 px-4 rounded-2xl bg-cyan-500/10 border border-cyan-500/40 text-cyan-400 hover:bg-cyan-500 hover:text-slate-950 text-xs font-bold transition-all text-center flex items-center justify-center gap-2 cursor-pointer shadow-md"
