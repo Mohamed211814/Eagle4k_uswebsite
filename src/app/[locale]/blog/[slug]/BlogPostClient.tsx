@@ -100,7 +100,14 @@ export function BlogPostClient({ post, translation, locale }: BlogPostClientProp
 
           {/* Article Body */}
           <article className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-slate-300 prose-a:text-amber-400 prose-strong:text-white prose-code:text-amber-300 space-y-6 leading-relaxed text-sm sm:text-base">
-            <div dangerouslySetInnerHTML={{ __html: translation.content.replace(/\n/g, '<br/>') }} />
+            <div
+              dangerouslySetInnerHTML={{
+                __html: translation.content
+                  .replace(/!\[.*?\]\(.*?\)\s*/g, '')
+                  .trim()
+                  .replace(/\n/g, '<br/>'),
+              }}
+            />
           </article>
 
           {/* Article Tags */}

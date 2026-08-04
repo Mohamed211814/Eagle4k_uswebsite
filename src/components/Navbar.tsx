@@ -102,17 +102,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
 
             <button
               onClick={handleGuideToPlans}
-              className="px-5 py-2 text-xs font-bold text-amber-400 bg-amber-500/10 border border-amber-500/40 hover:bg-amber-500/20 rounded-xl transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
+              className="px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 rounded-xl transition-all shadow-md shadow-amber-500/20 hover:scale-105 flex items-center gap-1.5 cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>{t('freeTrial')}</span>
-            </button>
-
-            <button
-              onClick={handleGuideToPlans}
-              className="px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 rounded-xl transition-all shadow-md shadow-amber-500/20 hover:scale-105 cursor-pointer"
-            >
-              {t('buyNow')}
             </button>
           </div>
 
@@ -154,19 +147,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
                 setMobileMenuOpen(false);
                 handleGuideToPlans(e);
               }}
-              className="w-full py-3 text-xs font-bold text-amber-400 bg-amber-500/10 border border-amber-500/40 rounded-xl flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full py-3 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 rounded-xl flex items-center justify-center gap-2 cursor-pointer"
             >
               <Sparkles className="w-4 h-4" />
               <span>{t('freeTrial')}</span>
-            </button>
-            <button
-              onClick={(e) => {
-                setMobileMenuOpen(false);
-                handleGuideToPlans(e);
-              }}
-              className="w-full py-3 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 rounded-xl cursor-pointer"
-            >
-              {t('buyNow')}
             </button>
           </div>
         </div>
