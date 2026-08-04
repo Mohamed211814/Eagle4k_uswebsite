@@ -15,11 +15,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleCheckoutClick = (planId?: string) => {
-    if (onOpenCheckout) {
-      onOpenCheckout(planId);
+  const handleGuideToPlans = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const pricingElem = document.getElementById('pricing');
+    if (pricingElem) {
+      pricingElem.scrollIntoView({ behavior: 'smooth' });
     } else {
-      window.location.href = '#pricing';
+      window.location.href = '/#pricing';
     }
   };
 
@@ -99,7 +101,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
             <LanguageSwitcher variant="navbar" />
 
             <button
-              onClick={() => handleCheckoutClick('trial-24h')}
+              onClick={handleGuideToPlans}
               className="px-5 py-2 text-xs font-bold text-amber-400 bg-amber-500/10 border border-amber-500/40 hover:bg-amber-500/20 rounded-xl transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5" />
@@ -107,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
             </button>
 
             <button
-              onClick={() => handleCheckoutClick('plan-12m')}
+              onClick={handleGuideToPlans}
               className="px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 rounded-xl transition-all shadow-md shadow-amber-500/20 hover:scale-105 cursor-pointer"
             >
               {t('buyNow')}
@@ -148,21 +150,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
           </nav>
           <div className="pt-4 border-t border-slate-800/80 flex flex-col gap-3">
             <button
-              onClick={() => {
+              onClick={(e) => {
                 setMobileMenuOpen(false);
-                handleCheckoutClick('trial-24h');
+                handleGuideToPlans(e);
               }}
-              className="w-full py-3 text-xs font-bold text-amber-400 bg-amber-500/10 border border-amber-500/40 rounded-xl flex items-center justify-center gap-2"
+              className="w-full py-3 text-xs font-bold text-amber-400 bg-amber-500/10 border border-amber-500/40 rounded-xl flex items-center justify-center gap-2 cursor-pointer"
             >
               <Sparkles className="w-4 h-4" />
               <span>{t('freeTrial')}</span>
             </button>
             <button
-              onClick={() => {
+              onClick={(e) => {
                 setMobileMenuOpen(false);
-                handleCheckoutClick('plan-12m');
+                handleGuideToPlans(e);
               }}
-              className="w-full py-3 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 rounded-xl"
+              className="w-full py-3 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 rounded-xl cursor-pointer"
             >
               {t('buyNow')}
             </button>
