@@ -25,6 +25,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     path: `/blog/${post.slug}`,
     title: translation.metaTitle || translation.title,
     description: translation.metaDescription || translation.excerpt,
+    keywords: post.tags || [],
     ogImage: post.featuredImage,
     availableLocales,
   });

@@ -19,6 +19,20 @@ export async function generateMetadata({ params }: BlogPageProps) {
     path: '/blog',
     title: t('title'),
     description: t('description'),
+    keywords: [
+      'smartone iptv',
+      'boitier iptv amazon',
+      'boîtier iptv',
+      'agence iptv',
+      'xenon iptv',
+      'rg iptv',
+      'iptv hottest',
+      'iptv az',
+      'iptv abonnement 12 mois',
+      'abonnement iptv 12 mois',
+      'buy IPTV subscription',
+      'acheter abonnement IPTV 4K',
+    ],
   });
 }
 

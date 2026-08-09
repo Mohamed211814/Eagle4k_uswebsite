@@ -17,6 +17,16 @@ export async function generateMetadata({ params }: HomePageProps) {
     path: '',
     title: t('title'),
     description: t('description'),
+    keywords: [
+      'buy IPTV subscription',
+      'acheter abonnement IPTV 4K',
+      'beste IPTV abonnement kopen',
+      'comprar suscripcion IPTV 4K',
+      'شراء اشتراك IPTV 4K',
+      'IPTV free trial 24h',
+      'IPTV sans coupure',
+      'IPTV 4K Anti Freeze',
+    ],
   });
 }
 
