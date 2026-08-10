@@ -20,9 +20,18 @@ export async function generateMetadata({ params }: BlogPageProps) {
     title: t('title'),
     description: t('description'),
     keywords: [
+      'buy IPTV subscription USA 4K',
+      'buy IPTV UK subscription 60fps',
+      'iptv kaufen deutschland 4k',
+      'acheter abonnement IPTV 4K France sans coupure',
+      'best iptv greece 4k',
+      'iptv kopen nederland 4k',
+      'comprar iptv españa 4k',
+      'TiviMate IPTV 4K',
+      'IPTV Smarters Pro 4K',
       'smartone iptv',
       'boitier iptv amazon',
-      'boîtier iptv',
+      'boîtier iptv 4k',
       'agence iptv',
       'xenon iptv',
       'rg iptv',
@@ -30,8 +39,6 @@ export async function generateMetadata({ params }: BlogPageProps) {
       'iptv az',
       'iptv abonnement 12 mois',
       'abonnement iptv 12 mois',
-      'buy IPTV subscription',
-      'acheter abonnement IPTV 4K',
     ],
   });
 }
