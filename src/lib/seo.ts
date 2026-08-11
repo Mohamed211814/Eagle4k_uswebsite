@@ -115,6 +115,24 @@ const DEFAULT_LOCALE_KEYWORDS: Record<SupportedLanguage, string[]> = {
     'proveedor iptv españa barato y estable',
     'suscripcion IPTV para Smart TV y Firestick España',
 
+    // IPTV Reseller Panel B2B Keywords
+    'buy IPTV reseller panel',
+    'best IPTV reseller panel 2026',
+    'IPTV reseller panel instant credits',
+    'Xtream Codes IPTV reseller panel buy',
+    'cheap IPTV reseller panel credits 4K',
+    'start IPTV reseller business online',
+    'whitelabel IPTV reseller panel',
+    'IPTV reseller panel USA UK Europe',
+    'IPTV admin panel reseller credits',
+    'Eagle4k IPTV reseller panel',
+    'IPTV reseller 4K Anti Freeze panel',
+    'best IPTV reseller portal instant setup',
+    'IPTV master reseller panel 4K',
+    'buy sub-reseller IPTV panel credits',
+    'IPTV reseller dashboard Xtream Codes API',
+    'discount IPTV reseller panel credits',
+
     // Device & Player Apps
     'TiviMate IPTV 4K premium subscription',
     'IPTV Smarters Pro 4K code buy',
@@ -137,6 +155,30 @@ const DEFAULT_LOCALE_KEYWORDS: Record<SupportedLanguage, string[]> = {
     'Eagle4k IPTV',
   ],
   fr: [
+    // IPTV Reseller Panel B2B Keywords (France & Francophonie - Hyper-Enrichi)
+    'panel IPTV revendeur France',
+    'acheter panel IPTV reseller France',
+    'meilleur panel IPTV revendeur 4K sans coupure',
+    'achat credits panel IPTV revendeur France',
+    'devenir revendeur IPTV France panel 4K',
+    'panel IPTV Xtream Codes API France',
+    'panel revendeur IPTV Smarters Pro France',
+    'panel IPTV pas cher crédits illimités',
+    'panneau administration IPTV revendeur France',
+    'meilleur serveur revendeur IPTV 4K France',
+    'panneau revendeur IPTV 12 mois France',
+    'panel IPTV test gratuit 24h revendeur',
+    'creer son entreprise IPTV revendeur France',
+    'panel IPTV Eagle4k France',
+    'revendeur IPTV 4K sans coupure panel',
+    'panneau revendeur IPTV IPTV Smarters TiviMate',
+    'tarif panel revendeur IPTV France',
+    'fournisseur panel IPTV revendeur gros',
+    'recharger credits panel IPTV revendeur',
+    'sous revendeur panel IPTV France',
+    'meilleure offre panel IPTV revendeur 2026',
+    'panel IPTV 100 credits 50 credits 20 credits',
+
     // Intent d'achat France (Hyper-enrichi)
     'acheter abonnement IPTV 4K France',
     'meilleur abonnement IPTV France sans coupure',
@@ -223,6 +265,14 @@ const DEFAULT_LOCALE_KEYWORDS: Record<SupportedLanguage, string[]> = {
     'IPTV MAG Formuler Z11 Z10 France',
   ],
   nl: [
+    // IPTV Reseller Panel Keywords Nederland & België
+    'iptv reseller panel kopen nederland',
+    'beste iptv reseller panel 4k nederland',
+    'iptv reseller credits kopen zonder buffering',
+    'word iptv reseller nederland panel',
+    'xtream codes iptv reseller panel nederland',
+    'goedkoop iptv reseller panel belgie nederland',
+
     // Koopintentie Nederland & België
     'iptv kopen nederland',
     'beste 4K IPTV provider Nederland',
@@ -255,6 +305,15 @@ const DEFAULT_LOCALE_KEYWORDS: Record<SupportedLanguage, string[]> = {
     'Eagle4k IPTV',
   ],
   ar: [
+    // لوحات موزع ريسيلر IPTV
+    'شراء لوحة IPTV reseller موزع',
+    'افضل بنل IPTV ريسيلر بدون تقطيع',
+    'شراء رصيد كروت بنل IPTV موزع رسمي',
+    'تفعيل لوحة موزع IPTV فوري',
+    'لوحة تحكم IPTV Xtream Codes موزع',
+    'ارخص بنل IPTV موزع 4K',
+    'انشاء مشروع موزع IPTV ريسيلر',
+
     // النية التجارية للمستخدمين في أمريكا وبريطانيا وألمانيا وفرنسا واليونان وهولندا وإسبانيا
     'شراء افضل اشتراك IPTV 4K بدون تقطيع',
     'اشتراك IPTV ممتاز 12 شهر بث مباشر 4K',
@@ -284,6 +343,14 @@ const DEFAULT_LOCALE_KEYWORDS: Record<SupportedLanguage, string[]> = {
     'Eagle4k IPTV',
   ],
   es: [
+    // Paneles Revendedor IPTV España y Latinoamérica
+    'comprar panel IPTV reseller españa',
+    'el mejor panel revendedor IPTV 4K españa',
+    'comprar creditos panel IPTV revendedor sin cortes',
+    'panel revendedor IPTV Xtream Codes españa',
+    'ser revendedor IPTV panel 4K',
+    'panel IPTV barato creditos instantaneos',
+
     // Intención de Compra España y Países Occidentales
     'comprar iptv españa 4k',
     'el mejor iptv de españa sin cortes',

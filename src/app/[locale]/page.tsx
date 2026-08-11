@@ -20,6 +20,10 @@ export async function generateMetadata({ params }: HomePageProps) {
     keywords: [
       'buy IPTV subscription USA',
       'best IPTV provider USA',
+      'buy IPTV reseller panel',
+      'panel IPTV revendeur France',
+      'acheter panel IPTV reseller France',
+      'devenir revendeur IPTV France panel 4K',
       'buy IPTV UK subscription',
       'best IPTV service UK 4K',
       'iptv kaufen deutschland 4k bundesliga',
@@ -38,6 +42,7 @@ export async function generateMetadata({ params }: HomePageProps) {
       'comprar iptv españa 4k laliga sin cortes',
       'el mejor iptv de españa 60fps',
       'شراء افضل اشتراك IPTV 4K بدون تقطيع',
+      'شراء لوحة IPTV reseller موزع',
       'TiviMate IPTV 4K premium subscription',
       'IPTV Smarters Pro 4K code buy',
       'IPTV for Amazon Firestick 4K',

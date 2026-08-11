@@ -21,6 +21,10 @@ export async function generateMetadata({ params }: BlogPageProps) {
     description: t('description'),
     keywords: [
       'buy IPTV subscription USA 4K',
+      'buy IPTV reseller panel 4K',
+      'panel IPTV revendeur France',
+      'acheter panel IPTV reseller France',
+      'devenir revendeur IPTV France panel 4K',
       'buy IPTV UK subscription 60fps',
       'iptv kaufen deutschland 4k',
       'acheter abonnement IPTV 4K France sans coupure',
