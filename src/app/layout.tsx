@@ -29,6 +29,15 @@ export const metadata: Metadata = {
     ],
     shortcut: ["/favicon.ico"],
   },
+  other: {
+    'msvalidate.01': '957acf3444d64b779fdf08138ffeae6b',
+    'indexnow-key': '957acf3444d64b779fdf08138ffeae6b',
+  },
+  verification: {
+    other: {
+      'msvalidate.01': '957acf3444d64b779fdf08138ffeae6b',
+    },
+  },
 };
 
 export default function RootLayout({
