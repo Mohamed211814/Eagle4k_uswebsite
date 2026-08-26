@@ -60,21 +60,25 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout }) => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center ltr:lg:justify-start rtl:lg:justify-end gap-4 pt-2">
-              <button
-                onClick={() => onOpenCheckout('plan-12m')}
+              <a
+                href="https://t.co/OOQgSo81gQ"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-4 text-sm font-extrabold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400 hover:from-amber-300 hover:to-amber-400 rounded-2xl transition-all shadow-xl shadow-amber-500/25 hover:scale-[1.02] flex items-center justify-center gap-2 group cursor-pointer"
               >
                 <Sparkles className="w-4 h-4" />
                 <span>{t('ctaPricing')}</span>
-              </button>
+              </a>
 
-              <button
-                onClick={() => onOpenCheckout('trial-24h')}
+              <a
+                href="https://t.co/Lzz8gR9JxM"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-4 text-sm font-extrabold text-white bg-slate-900/90 border border-slate-700 hover:border-amber-500/50 rounded-2xl transition-all hover:bg-slate-800 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Zap className="w-4 h-4 text-amber-400" />
                 <span>{t('ctaTrial')}</span>
-              </button>
+              </a>
             </div>
           </div>
 

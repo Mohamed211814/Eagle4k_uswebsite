@@ -13,11 +13,18 @@ import { FAQ } from '@/components/FAQ';
 import { Footer } from '@/components/Footer';
 import { CheckoutModal } from '@/components/CheckoutModal';
 
+import { PRICING_PLANS } from '@/data/pricing';
+
 export function HomePageClient() {
   const [checkoutOpen, setCheckoutOpen] = useState<boolean>(false);
   const [selectedPlanId, setSelectedPlanId] = useState<string>('plan-12m');
 
   const handleOpenCheckout = (planId?: string) => {
+    const plan = PRICING_PLANS.find((p) => p.id === planId);
+    if (plan && plan.orderUrl) {
+      window.open(plan.orderUrl, '_blank', 'noopener,noreferrer');
+      return;
+    }
     setSelectedPlanId(planId || 'plan-12m');
     setCheckoutOpen(true);
   };

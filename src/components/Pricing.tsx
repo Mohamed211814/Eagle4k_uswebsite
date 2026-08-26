@@ -121,8 +121,10 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenCheckout }) => {
 
                   {/* Plan CTA Button */}
                   <div className="mt-8">
-                    <button
-                      onClick={() => onOpenCheckout(plan.id)}
+                    <a
+                      href={plan.orderUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`w-full py-3.5 rounded-xl font-bold text-xs transition-all shadow-md cursor-pointer flex items-center justify-center gap-2 ${
                         isPopular
                           ? 'bg-amber-400 hover:bg-amber-300 text-slate-950 shadow-amber-500/30'
@@ -131,7 +133,7 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenCheckout }) => {
                     >
                       <Zap className={`w-4 h-4 ${isPopular ? 'fill-slate-950' : 'text-amber-400'}`} />
                       {plan.ctaText}
-                    </button>
+                    </a>
                   </div>
 
                 </div>

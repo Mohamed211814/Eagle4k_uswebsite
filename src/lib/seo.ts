@@ -472,14 +472,14 @@ export function generateProductJsonLd(locale: SupportedLanguage = 'en') {
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'USD',
-      lowPrice: '14.99',
-      highPrice: '64.99',
+      lowPrice: '11.99',
+      highPrice: '55.99',
       offerCount: '4',
       offers: [
         {
           '@type': 'Offer',
           name: '1 Month 4K IPTV Subscription',
-          price: '14.99',
+          price: '11.99',
           priceCurrency: 'USD',
           availability: 'https://schema.org/InStock',
           url: `${SITE_URL}/${locale}`,
@@ -487,7 +487,7 @@ export function generateProductJsonLd(locale: SupportedLanguage = 'en') {
         {
           '@type': 'Offer',
           name: '12 Months 4K IPTV Subscription',
-          price: '64.99',
+          price: '55.99',
           priceCurrency: 'USD',
           availability: 'https://schema.org/InStock',
           url: `${SITE_URL}/${locale}`,

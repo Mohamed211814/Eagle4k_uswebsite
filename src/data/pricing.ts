@@ -9,6 +9,7 @@ export interface PricingPlan {
   connections: number;
   features: string[];
   ctaText: string;
+  orderUrl: string;
 }
 
 export interface ResellerPlan {
@@ -26,23 +27,6 @@ export interface ResellerPlan {
 
 export const PRICING_PLANS: PricingPlan[] = [
   {
-    id: 'trial-24h',
-    name: '24 Hours Trial Pass',
-    duration: '24 Hours',
-    price: '$1.49',
-    monthlyEquivalent: 'Fast Pass',
-    connections: 1,
-    features: [
-      'Access to 60,000+ Live Channels',
-      '160,000+ Movies & TV Shows (VOD)',
-      '4K, FHD & HD Stream Quality',
-      'Anti Freeze v9.0 Technology',
-      'EPG TV Guide Included',
-      'Fast 2 Minute Activation',
-    ],
-    ctaText: '⚡ Order 24 Hours Now',
-  },
-  {
     id: 'plan-1m',
     name: '1 Month Starter',
     duration: '1 Month',
@@ -59,6 +43,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       '24/7 Priority Live Support',
     ],
     ctaText: '🚀 Order 1 Month Now',
+    orderUrl: 'https://t.co/Lzz8gR9JxM',
   },
   {
     id: 'plan-3m',
@@ -66,7 +51,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     duration: '3 Months',
     price: '$23.99',
     monthlyEquivalent: '$7.99 / mo',
-    discountBadge: 'SAVE 45%',
+    discountBadge: 'SAVE 33%',
     connections: 1,
     features: [
       '60,000+ Premium 4K/FHD Channels',
@@ -78,6 +63,27 @@ export const PRICING_PLANS: PricingPlan[] = [
       '24/7 Priority Live Support',
     ],
     ctaText: '🔥 Order 3 Months Now',
+    orderUrl: 'https://t.co/dqB5XFZpk9',
+  },
+  {
+    id: 'plan-6m',
+    name: '6 Months Premium',
+    duration: '6 Months',
+    price: '$32.99',
+    monthlyEquivalent: '$5.50 / mo',
+    discountBadge: 'SAVE 54%',
+    connections: 1,
+    features: [
+      '60,000+ Premium 4K/FHD Channels',
+      '160,000+ VOD Movies & Series',
+      'Anti Freeze v9.0 Technology',
+      'All Sports & Live PPV Included',
+      'EPG TV Guide & 7 Day Catchup',
+      'VPN Friendly & 99.9% Uptime',
+      '24/7 Priority Live Support',
+    ],
+    ctaText: '⚡ Order 6 Months Now',
+    orderUrl: 'https://t.co/mJ1Gx6ZWku',
   },
   {
     id: 'plan-12m',
@@ -85,7 +91,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     duration: '12 Months',
     price: '$55.99',
     monthlyEquivalent: '$4.66 / mo',
-    discountBadge: 'BEST VALUE SAVE 70%',
+    discountBadge: 'BEST VALUE SAVE 61%',
     popular: true,
     connections: 1,
     features: [
@@ -99,6 +105,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       '24/7 VIP Dedicated Support',
     ],
     ctaText: '👑 Order 12 Months Now',
+    orderUrl: 'https://t.co/OOQgSo81gQ',
   },
 ];
 

@@ -156,11 +156,37 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             </div>
           )}
 
-          {/* WhatsApp Direct Order Button */}
+          {/* Direct Order / WhatsApp Order Buttons */}
           <div className="space-y-3 pt-2 border-t border-slate-800">
-            <div className="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-slate-200 text-xs leading-relaxed text-center font-medium">
-              <span className="text-amber-400 font-extrabold block text-sm mb-0.5">⚡ Instant 24/7 Setup via WhatsApp:</span>
-              Click the button below to confirm your order and get your 4K IPTV credentials delivered in 2 minutes.
+            {'orderUrl' in currentPlan && currentPlan.orderUrl && (
+              <a
+                href={currentPlan.orderUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-4 rounded-2xl bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all shadow-xl shadow-amber-500/25 group cursor-pointer"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-11 h-11 rounded-xl bg-slate-950/20 flex items-center justify-center text-slate-950 shrink-0 group-hover:scale-110 transition-transform">
+                    <Zap className="w-6 h-6 fill-slate-950" />
+                  </div>
+                  <div className="text-left">
+                    <div className="text-sm font-extrabold text-slate-950">
+                      Order Online Directly
+                    </div>
+                    <div className="text-xs text-slate-900 font-medium">
+                      Instant Automated Activation Page
+                    </div>
+                  </div>
+                </div>
+                <span className="text-xs font-black bg-slate-950 text-amber-400 px-4 py-2 rounded-xl shadow group-hover:scale-105 transition-transform shrink-0">
+                  Order Now ⚡
+                </span>
+              </a>
+            )}
+
+            <div className="p-3 rounded-2xl bg-slate-900 border border-slate-800 text-slate-300 text-xs leading-relaxed text-center font-medium">
+              <span className="text-amber-400 font-extrabold block text-xs mb-0.5">⚡ Need Custom Setup Assistance?</span>
+              Chat with our 24/7 team via WhatsApp to place your order with manual guidance.
             </div>
 
             <a
@@ -177,15 +203,15 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                 </div>
                 <div className="text-left">
                   <div className="text-sm font-extrabold text-white">
-                    Complete Order via WhatsApp
+                    Order via WhatsApp
                   </div>
                   <div className="text-xs text-emerald-100 font-medium">
-                    Instant Credentials Delivery & Setup
+                    24/7 Priority Live Support
                   </div>
                 </div>
               </div>
               <span className="text-xs font-black bg-white text-emerald-950 px-4 py-2 rounded-xl shadow group-hover:scale-105 transition-transform shrink-0">
-                Order Now ⚡
+                Chat Now 💬
               </span>
             </a>
           </div>

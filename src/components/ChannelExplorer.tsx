@@ -206,16 +206,18 @@ export const ChannelExplorer: React.FC<ChannelExplorerProps> = ({ onOpenCheckout
               <Sparkles className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-white">Want to test your favorite channel list right now?</h3>
-              <p className="text-xs text-slate-400">Claim a 24-Hour Trial pass for fast setup on your TV or Firestick.</p>
+              <h3 className="text-base font-bold text-white">Ready to start watching all 60,000+ channels right now?</h3>
+              <p className="text-xs text-slate-400">Order a 1-Month Starter plan for instant 2-minute setup on your TV or Firestick.</p>
             </div>
           </div>
-          <button
-            onClick={() => onOpenCheckout('trial-24h')}
+          <a
+            href="https://t.co/Lzz8gR9JxM"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-6 py-3 text-sm font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 rounded-xl transition-all shadow-lg shadow-amber-500/20 shrink-0 cursor-pointer"
           >
-            Get 24H Trial ($1.49)
-          </button>
+            Get 1 Month ($11.99)
+          </a>
         </div>
 
       </div>
