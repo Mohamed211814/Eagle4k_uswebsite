@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, Cpu, MessageCircle, ChevronDown } from 'lucide-react';
+import { X, Cpu, MessageCircle, ChevronDown, Zap } from 'lucide-react';
 import { PRICING_PLANS, RESELLER_PLANS } from '@/data/pricing';
 
 interface CheckoutModalProps {
@@ -27,7 +27,17 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   if (!isOpen) return null;
 
   const allPlans = [
-    ...PRICING_PLANS,
+    ...PRICING_PLANS.map((p) => ({
+      id: p.id,
+      name: p.name,
+      duration: p.duration,
+      price: p.price,
+      monthlyEquivalent: p.monthlyEquivalent,
+      connections: p.connections,
+      features: p.features,
+      ctaText: p.ctaText,
+      orderUrl: p.orderUrl as string | undefined,
+    })),
     ...RESELLER_PLANS.map((r) => ({
       id: r.id,
       name: r.name,
@@ -37,6 +47,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
       connections: 1,
       features: r.features,
       ctaText: r.ctaText,
+      orderUrl: undefined as string | undefined,
     })),
   ];
 
@@ -158,7 +169,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
           {/* Direct Order / WhatsApp Order Buttons */}
           <div className="space-y-3 pt-2 border-t border-slate-800">
-            {'orderUrl' in currentPlan && currentPlan.orderUrl && (
+            {Boolean(currentPlan.orderUrl) && (
               <a
                 href={currentPlan.orderUrl}
                 target="_blank"
