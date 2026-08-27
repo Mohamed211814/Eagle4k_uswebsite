@@ -5,6 +5,12 @@ import { SUPPORTED_LANGUAGES } from '@/types/blog';
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://eagle4k.us';
 const locales = ['en', 'fr', 'nl', 'ar', 'es'];
 
+function getValidDate(dateStr?: string): Date {
+  if (!dateStr) return new Date();
+  const d = new Date(dateStr);
+  return isNaN(d.getTime()) ? new Date() : d;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ['', '/contact', '/dmca', '/privacy', '/refund-policy', '/terms', '/blog'];
   const sitemapEntries: MetadataRoute.Sitemap = [];
@@ -46,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
       sitemapEntries.push({
         url,
-        lastModified: post.updatedDate ? new Date(post.updatedDate) : new Date(post.publishDate),
+        lastModified: getValidDate(post.updatedDate || post.publishDate),
         changeFrequency: 'weekly',
         priority: 0.7,
         alternates: {
