@@ -15,6 +15,25 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://eagle4k.us"),
   manifest: "/site.webmanifest",
+  applicationName: "Eagle4k IPTV",
+  authors: [{ name: "Eagle4k IPTV" }],
+  creator: "Eagle4k IPTV",
+  publisher: "Eagle4k IPTV",
+  category: "entertainment",
+  formatDetection: {
+    telephone: false,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },

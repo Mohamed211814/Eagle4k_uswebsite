@@ -17,6 +17,16 @@ export async function generateMetadata({ params }: ContactPageProps) {
     path: '/contact',
     title: t('title'),
     description: t('description'),
+    keywords: [
+      'contact Eagle4k IPTV support',
+      'IPTV WhatsApp live support 24/7',
+      'IPTV instant activation assistance',
+      'IPTV customer service online',
+      'support technique IPTV Smarters TiviMate',
+      'assistance abonnement IPTV France 24/7',
+      'soporte tecnico IPTV España WhatsApp',
+      'دعم فني اشتراك IPTV واتساب فوري',
+    ],
   });
 }
 

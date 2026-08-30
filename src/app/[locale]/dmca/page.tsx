@@ -17,7 +17,14 @@ export async function generateMetadata({ params }: DMCAProps) {
     locale: locale as SupportedLanguage,
     path: '/dmca',
     title: `DMCA Compliance Policy | Eagle4k IPTV`,
-    description: `DMCA copyright compliance information for Eagle4k IPTV streaming services.`,
+    description: `DMCA copyright compliance information and content policy for Eagle4k IPTV streaming services.`,
+    keywords: [
+      'Eagle4k DMCA policy',
+      'copyright compliance IPTV',
+      'politique DMCA IPTV',
+      'politica DMCA proteccion derechos de autor',
+      'DMCA naleving IPTV',
+    ],
   });
 }
 

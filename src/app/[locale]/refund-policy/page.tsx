@@ -14,8 +14,16 @@ export async function generateMetadata({ params }: RefundProps) {
   return generateLocalizedMetadata({
     locale: locale as SupportedLanguage,
     path: '/refund-policy',
-    title: `Refund Policy | Eagle4k IPTV`,
-    description: `7-day money back guarantee and refund policy details for Eagle4k IPTV.`,
+    title: `Refund Policy & 7-Day Money Back Guarantee | Eagle4k IPTV`,
+    description: `7-day money back guarantee and full refund policy details for Eagle4k IPTV subscriptions.`,
+    keywords: [
+      'IPTV 7 day money back guarantee',
+      'risk free IPTV subscription',
+      'IPTV satisfaction guarantee',
+      'garantie remboursement IPTV 7 jours',
+      'garantia devolucion dinero IPTV',
+      'ضمان استرجاع الأموال اشتراك IPTV',
+    ],
   });
 }
 

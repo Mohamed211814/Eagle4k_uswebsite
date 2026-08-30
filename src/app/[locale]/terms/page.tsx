@@ -14,8 +14,16 @@ export async function generateMetadata({ params }: TermsProps) {
   return generateLocalizedMetadata({
     locale: locale as SupportedLanguage,
     path: '/terms',
-    title: `Terms of Service | Eagle4k IPTV`,
-    description: `Terms and conditions governing the use of Eagle4k IPTV streaming services.`,
+    title: `Terms of Service & Subscription Conditions | Eagle4k IPTV`,
+    description: `Terms of service, subscription policies, and usage conditions for Eagle4k IPTV streaming platform.`,
+    keywords: [
+      'Eagle4k terms of service',
+      'IPTV subscription agreement',
+      'conditions générales abonnement IPTV',
+      'terminos y condiciones IPTV',
+      'voorwaarden IPTV abonnement',
+      'شروط وأحكام اشتراك IPTV',
+    ],
   });
 }
 

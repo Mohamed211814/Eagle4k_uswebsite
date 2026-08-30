@@ -4,7 +4,12 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
-import { generateProductJsonLd, generateOrganizationJsonLd } from '@/lib/seo';
+import {
+  generateProductJsonLd,
+  generateOrganizationJsonLd,
+  generateFaqJsonLd,
+  generateWebSiteJsonLd,
+} from '@/lib/seo';
 import { SupportedLanguage } from '@/types/blog';
 
 export function generateStaticParams() {
@@ -29,6 +34,8 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   const productSchema = generateProductJsonLd(locale as SupportedLanguage);
   const organizationSchema = generateOrganizationJsonLd();
+  const faqSchema = generateFaqJsonLd(locale as SupportedLanguage);
+  const websiteSchema = generateWebSiteJsonLd();
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
@@ -39,6 +46,14 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       <div dir={isRtl ? 'rtl' : 'ltr'} lang={locale} className={`min-h-full flex flex-col ${isRtl ? 'font-sans-rtl' : ''}`}>
         {children}

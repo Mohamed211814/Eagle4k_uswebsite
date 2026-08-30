@@ -14,8 +14,16 @@ export async function generateMetadata({ params }: PrivacyProps) {
   return generateLocalizedMetadata({
     locale: locale as SupportedLanguage,
     path: '/privacy',
-    title: `Privacy Policy | Eagle4k IPTV`,
-    description: `Privacy policy and data protection practices for Eagle4k subscribers.`,
+    title: `Privacy Policy & Data Security | Eagle4k IPTV`,
+    description: `Privacy policy, user data encryption, and zero-logs streaming protection practices for Eagle4k subscribers.`,
+    keywords: [
+      'Eagle4k privacy policy',
+      'IPTV secure checkout data protection',
+      'zero logs IPTV provider',
+      'confidentialité abonnement IPTV',
+      'politica privacidad IPTV segura',
+      'سياسة الخصوصية وأمان البيانات IPTV',
+    ],
   });
 }
 
